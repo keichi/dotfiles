@@ -1,0 +1,26 @@
+[user]
+	name = Keichi Takahashi
+	email = keichi.t@me.com
+[core]
+	excludesfile = /Users/Keichi/.gitignore_global
+    editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = true
+[alias]
+    ignore = !"f() { local s=$1; shift; \
+      while [ $# -gt 0 ]; do s="$s,$1"; shift; done;\
+      curl "http://gitignore.io/api/$s"; }; f"
+      lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+      lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[push]
+	default = simple

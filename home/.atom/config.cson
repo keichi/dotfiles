@@ -1,0 +1,25 @@
+'exception-reporting':
+  'userId': '75688dfa-33b5-7542-3135-d82c6a67c0c9'
+'release-notes':
+  'viewedVersion': '0.71.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': '16336f3a88dff6ceeb9abf06116c32f3b880a3b1'
+'editor':
+  'fontSize': 16
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'monokai'
+  ]
+  'ignoredNames': [
+    '.git'
+    '.svn'
+    '.DS_Store'
+  ]
+  'disabledPackages': [
+    'autocomplete-plus'
+    'autocomplete-js'
+  ]
+'js-autocomplete': {}

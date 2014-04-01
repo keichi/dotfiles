@@ -1,0 +1,37 @@
+update
+upgrade
+
+install docker
+install boot2docker
+install git
+install tig
+install iperf
+install nkf
+install tag
+install wget
+
+tap phinze/cask
+install brew-cask
+
+cask install dropbox
+cask install google-chrome
+cask install iterm2
+cask install macvim
+cask install sublime-text
+cask install transmission
+cask install virtualbox
+cask install vlc
+cask install vagrant
+cask install skype
+cask install github
+cask install cyberduck
+cask install kobito
+cask install keka
+cask install wireshark
+cask install mamp
+cask install mou
+
+tap sanemat/font
+install --powerline --vim-powerline ricty
+
+cleanup

@@ -9,6 +9,7 @@ install iperf
 install nkf
 install tag
 install wget
+install rbenv
 
 tap phinze/cask
 install brew-cask

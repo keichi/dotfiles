@@ -1,5 +1,3 @@
-"新しい行のインデントを現在行と同じにする
-"set autoindent
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer 
 "Vi互換をオフ
@@ -40,18 +38,10 @@ set whichwrap=b,s,h,l,<,>,[,]
 set nowrapscan
 "常に構文強調を使う
 syntax enable
-"カラースキームを設定
-colorscheme solarized
 "背景を暗く設定
 set background=dark
 "ルーラを表示
 set ruler
-"閉じ括弧の自動入力
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
 "Cスタイルのインデントを有効にする
 set cindent
 "バックアップフォルダを指定
@@ -60,7 +50,38 @@ set backupdir=~/.vim/backup
 set swapfile
 set directory=~/.vim/swap
 
-helptags ~/.vim/doc
-let g:user_zen_settings = { 'indentation':'    ' }
+set shell=/bin/bash
 
-silent! nmap <unique> <F5> <Plug>(quickrun)
+if has('vim_starting')
+set nocompatible               " Be iMproved
+
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Bundles
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'yuroyoro/vim-autoclose'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'yuroyoro/vimdoc_ja'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'tomasr/molokai'
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+"プラグインの設定
+let g:airline_powerline_fonts = 1
+set guifont=Ricty\ Regular\ for\ Powerline:h16
+
+colorscheme molokai

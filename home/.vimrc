@@ -1,3 +1,5 @@
+" エンコーディングを設定
+set encoding=utf-8
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer 
 "Vi互換をオフ
@@ -49,15 +51,15 @@ set backup
 set backupdir=~/.vim/backup
 set swapfile
 set directory=~/.vim/swap
-
+"Neobundleがfishでは動かなかったので
 set shell=/bin/bash
+"Yank to clipboard
+set clipboard=unnamed,autoselect
 
 if has('vim_starting')
-set nocompatible               " Be iMproved
-
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Bundles
@@ -72,8 +74,9 @@ NeoBundle 'yuroyoro/vimdoc_ja'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'scrooloose/nerdcommenter'
 
-" Required:
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
@@ -82,6 +85,43 @@ NeoBundleCheck
 
 "プラグインの設定
 let g:airline_powerline_fonts = 1
-set guifont=Ricty\ Regular\ for\ Powerline:h16
-
+let g:airline_theme='molokai'
+if !has('gui_macvim')
+    set laststatus=2
+endif
+set guifont=Ricty\ Discord\ for\ Powerline:h16
 colorscheme molokai
+
+"vim-indent-guides
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_color_change_percent = 20
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * : highlight IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * : highlight IndentGuidesEven ctermbg=black
+
+"necocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return neocomplcache#smart_close_popup() . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
+"<TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"<C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+"NERD commenter
+let NERDSpaceDelims = 1

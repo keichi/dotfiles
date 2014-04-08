@@ -550,9 +550,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>927 92 445 270 0 0 1440 878 </string>
+	<string>880 90 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>271 153 924 485 0 0 1440 878 </string>
+	<string>262 256 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 294 592 584 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1291,7 +1291,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm</string>
+			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1386,7 +1386,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-03-31T13:54:24Z</date>
+	<date>2014-04-07T07:32:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

@@ -93,11 +93,7 @@ NeoBundleCheck
 "プラグインの設定
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
-if !has('gui_macvim')
-    set laststatus=2
-endif
-set guifont=Ricty\ Discord\ for\ Powerline:h16
-colorscheme molokai
+set laststatus=2
 
 "vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1
@@ -130,4 +126,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "NERD commenter
 let NERDSpaceDelims = 1
+
+"カラースキームを設定
+colorscheme molokai
 

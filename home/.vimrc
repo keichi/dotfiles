@@ -29,7 +29,7 @@ set showmatch
 "検索時に大文字を含んでいたら大/小を区別
 set smartcase
 "新しい行を作ったときに高度な自動インデントを行う
-"set smartindent
+set smartindent
 "行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
 "ファイル内の <Tab> が対応する空白の数
@@ -44,8 +44,6 @@ syntax enable
 set background=dark
 "ルーラを表示
 set ruler
-"Cスタイルのインデントを有効にする
-set cindent
 "バックアップフォルダを指定
 set backup
 set backupdir=~/.vim/backup

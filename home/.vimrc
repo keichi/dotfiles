@@ -92,6 +92,7 @@ NeoBundleCheck
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 set laststatus=2
+set t_Co=256
 
 "vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1

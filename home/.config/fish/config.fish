@@ -25,6 +25,8 @@ set -x GOPATH $HOME/go
 
 set -x PATH /Users/Keichi/Projects/depot_tools $PATH
 
+set -x EDITOR vim
+
 function fish_prompt
     ~/powerline-shell.py $status --shell bare ^/dev/null
 end

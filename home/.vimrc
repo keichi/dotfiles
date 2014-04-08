@@ -57,6 +57,9 @@ set shell=/bin/bash
 set clipboard=unnamed,autoselect
 "Helpを縦分割で開く
 nnoremap <Space>h :<C-u>vert bel h<Space>
+"スクロールを速くする
+set lazyredraw
+set ttyfast
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/

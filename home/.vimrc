@@ -78,6 +78,8 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on
 

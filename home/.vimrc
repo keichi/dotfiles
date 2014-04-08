@@ -55,6 +55,8 @@ set directory=~/.vim/swap
 set shell=/bin/bash
 "Yank to clipboard
 set clipboard=unnamed,autoselect
+"Helpを縦分割で開く
+nnoremap <Space>h :<C-u>vert bel h<Space>
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -84,7 +86,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 "プラグインの設定
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 if !has('gui_macvim')
     set laststatus=2
@@ -111,9 +113,7 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-    return neocomplcache#smart_close_popup() . "\<CR>"
-    " For no inserting <CR> key.
-    "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+    return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 "<TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -125,3 +125,4 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "NERD commenter
 let NERDSpaceDelims = 1
+

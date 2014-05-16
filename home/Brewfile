@@ -39,6 +39,7 @@ cask install mou
 cask install alfred
 
 tap sanemat/font
+install fontforge --with-python
 install --powerline --vim-powerline ricty
 
 cleanup

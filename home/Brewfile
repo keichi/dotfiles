@@ -10,6 +10,11 @@ install nkf
 install tag
 install wget
 install rbenv
+install fish
+install scala
+install play
+install node
+install imagemagick
 
 tap phinze/cask
 install brew-cask
@@ -31,6 +36,7 @@ cask install keka
 cask install wireshark
 cask install mamp
 cask install mou
+cask install alfred
 
 tap sanemat/font
 install --powerline --vim-powerline ricty

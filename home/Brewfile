@@ -15,6 +15,11 @@ install scala
 install play
 install node
 install imagemagick
+install haskell-platform
+install mono
+install hub
+install unrar
+install pandoc
 
 tap phinze/cask
 install brew-cask
@@ -39,6 +44,7 @@ cask install mou
 cask install alfred
 cask install java
 cask install intellij-idea-ce
+cask install xamarin
 
 tap sanemat/font
 install fontforge --with-python

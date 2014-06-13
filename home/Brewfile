@@ -44,7 +44,8 @@ cask install mou
 cask install alfred
 cask install java
 cask install intellij-idea-ce
-cask install xamarin
+cask install xamarin-studio
+cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
 
 tap sanemat/font
 install fontforge --with-python

@@ -46,6 +46,8 @@ cask install java
 cask install intellij-idea-ce
 cask install xamarin-studio
 cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
+cask install appcleaner
+cask install audacity
 
 tap sanemat/font
 install fontforge --with-python

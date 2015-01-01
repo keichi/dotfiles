@@ -15,20 +15,21 @@ set fish_plugins brew node rbenv sublime bundler
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
-# Haskell platform
-set -x PATH /Users/Keichi/Library/Haskell/bin $PATH
-
-# MacTex
+set -x PATH $HOME/Library/Haskell/bin $PATH
 set -x PATH /usr/texbin $PATH
-
-set -x GOPATH $HOME/go
-
-set -x PATH /Users/Keichi/Projects/depot_tools $PATH
+set -x PATH $HOME/go/bin $PATH
+set -x PATH /usr/local/sbin $PATH
+set -x PATH /usr/local/gcc-arm/bin $PATH
 
 set -x EDITOR vim
+
+set -x LC_ALL ja_JP.UTF-8
+
+set -x PYTHONPATH /usr/local/lib/python2.7/site-packages/ $PYTHONPATH
 
 function fish_prompt
     ~/powerline-shell.py $status --shell bare ^/dev/null
 end
 
 set fish_greeting
+

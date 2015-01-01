@@ -63,7 +63,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Bundles
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -72,7 +72,6 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-markdown'
 NeoBundle 'yuroyoro/vimdoc_ja'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
@@ -81,6 +80,14 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
+call neobundle#end()
 
 filetype plugin indent on
 
@@ -125,6 +132,13 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "NERD commenter
 let NERDSpaceDelims = 1
+
+"Settings for CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "カラースキームを設定
 colorscheme molokai

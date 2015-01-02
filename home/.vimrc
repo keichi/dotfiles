@@ -58,6 +58,16 @@ nnoremap <Space>h :<C-u>vert bel h<Space>
 "スクロールを速くする
 set lazyredraw
 set ttyfast
+"複数行連続してインデントするため
+vnoremap > >gv
+vnoremap < <gv
+"コマンドラインモードでファイル名補完をできるようにした
+set wildmode=longest:full
+set wildmenu
+"vimgrepの結果を常に別ウィンドウに表示するように
+autocmd QuickFixCmdPost *grep* cwindow
+"vim-markdownでのコードフォルディングを無効にする
+let g:vim_markdown_folding_disabled=1
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -76,7 +86,6 @@ NeoBundle 'yuroyoro/vimdoc_ja'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tomasr/molokai'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Lokaltog/vim-easymotion'

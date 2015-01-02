@@ -68,6 +68,8 @@ set wildmenu
 autocmd QuickFixCmdPost *grep* cwindow
 "vim-markdownでのコードフォルディングを無効にする
 let g:vim_markdown_folding_disabled=1
+"escで検索時のハイライトを解除する
+nnoremap <esc> :noh<return><esc>
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/

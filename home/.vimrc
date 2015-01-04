@@ -159,7 +159,8 @@ nnoremap sp :<C-u>CtrlP<CR>
 nnoremap sq :<C-u>CtrlPQuickfix<CR>
 nnoremap ss :<C-u>CtrlPMixed<CR>
 nnoremap st :<C-u>CtrlPTag<CR>
-let g:ctrlp_map = '<c-p>'
+nnoremap <C-p> :<C-u>CtrlPMixed<CR>
+let g:ctrlp_map = '<Nop>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     

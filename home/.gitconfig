@@ -3,7 +3,7 @@
 	email = keichi.t@me.com
 [core]
 	excludesfile = ~/.gitignore_global
-    editor = /usr/bin/vim
+	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

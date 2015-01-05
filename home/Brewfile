@@ -21,6 +21,7 @@ install hub
 install unrar
 install pandoc
 install mrt dfc jq htop-osx
+install vim
 
 tap phinze/cask
 install brew-cask

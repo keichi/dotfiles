@@ -101,6 +101,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'flazz/vim-colorschemes'
 
 call neobundle#end()
 

@@ -102,6 +102,7 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'koron/codic-vim'
 
 call neobundle#end()
 

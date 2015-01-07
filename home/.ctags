@@ -2,6 +2,7 @@
 --exclude=.svn
 --exclude=.git
 --exclude=vendor
+--exclude=node_modules
 --exclude=*.min.js
 --c++-kinds=+p
 --fields=+iaS
@@ -13,15 +14,6 @@
 --exclude=.git
 --exclude=vendor
 --exclude=*.min.js
-
---langdef=js
---langmap=js:.js
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
---regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
---regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/,function/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
 
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee

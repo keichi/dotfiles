@@ -22,6 +22,7 @@ install unrar
 install pandoc
 install mrt dfc jq htop-osx
 install vim
+install ctags
 
 tap phinze/cask
 install brew-cask

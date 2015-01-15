@@ -1,15 +1,11 @@
 " エンコーディングを設定
 set encoding=utf-8
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-set browsedir=buffer 
+set browsedir=buffer
 "Vi互換をオフ
 set nocompatible
 "変更中のファイルでも、保存しないで他のファイルを表示
 set hidden
-"インクリメンタルサーチを行う
-set incsearch
-"検索語を強調表示する
-set hlsearch
 "コマンドライン補完を便利に
 set wildmenu
 "タイプ途中のコマンドを画面最下行に表示する
@@ -58,8 +54,12 @@ set wildmenu
 autocmd QuickFixCmdPost *grep* cwindow
 "vim-markdownでのコードフォルディングを無効にする
 let g:vim_markdown_folding_disabled=1
-"escで検索時のハイライトを解除する
-nnoremap <esc> :noh<return><esc>
+"なんかバックスペースが効かなくなるときの対策
+set backspace=indent,eol,start
+"行末の空白を保存時に自動的に削除するようにした
+autocmd BufWritePre * :%s/\s\+$//e
+"カラムガイドを表示
+set colorcolumn=80
 
 "タブ関係の設定
 "タブの代わりに空白文字を挿入する
@@ -103,6 +103,7 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'koron/codic-vim'
+NeoBundle 'haya14busa/incsearch.vim'
 
 call neobundle#end()
 
@@ -165,9 +166,27 @@ nnoremap <C-p> :<C-u>CtrlPMixed<CR>
 let g:ctrlp_map = '<Nop>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
+
+"Settings for QuickRun
+nnoremap sr :<C-u>QuickRun<CR>
+let g:quickrun_config={'*': {'split': ''}}
+set splitbelow
+
+"Settings for incsearch
+set hlsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 "カラースキームを設定
 let g:molokai_original = 1

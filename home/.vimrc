@@ -116,11 +116,12 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-"プラグインの設定
+"vim-airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 set laststatus=2
 set t_Co=256
+let g:airline#extensions#tabline#enabled = 1
 
 "vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1

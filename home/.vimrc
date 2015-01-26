@@ -60,6 +60,8 @@ set backspace=indent,eol,start
 autocmd BufWritePre * :%s/\s\+$//e
 "カラムガイドを表示
 set colorcolumn=80
+"1行の長さ
+set textwidth=78
 
 "タブ関係の設定
 "タブの代わりに空白文字を挿入する

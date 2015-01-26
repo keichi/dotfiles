@@ -49,7 +49,10 @@ class Powerline:
         self.segments = []
 
     def color(self, prefix, code):
-        return self.color_template % ('[%s;5;%sm' % (prefix, code))
+        if code is None:
+            return ''
+        else:
+            return self.color_template % ('[%s;5;%sm' % (prefix, code))
 
     def fgcolor(self, code):
         return self.color('38', code)
@@ -58,12 +61,13 @@ class Powerline:
         return self.color('48', code)
 
     def append(self, content, fg, bg, separator=None, separator_fg=None):
-        self.segments.append((content, fg, bg, separator or self.separator,
-            separator_fg or bg))
+        self.segments.append((content, fg, bg, 
+            separator if separator is not None else self.separator,
+            separator_fg if separator_fg is not None else bg))
 
     def draw(self):
         return (''.join(self.draw_segment(i) for i in range(len(self.segments)))
-                + self.reset).encode('utf-8')
+                + self.reset).encode('utf-8') + ' '
 
     def draw_segment(self, idx):
         segment = self.segments[idx]
@@ -256,7 +260,7 @@ def add_hostname_segment():
         hostname = gethostname()
         FG, BG = stringToHashToColorAndOpposite(hostname)
         FG, BG = (rgb2short(*color) for color in [FG, BG])
-        host_prompt = ' %s' % hostname.split('.')[0]
+        host_prompt = ' %s ' % hostname.split('.')[0]
 
         powerline.append(host_prompt, FG, BG)
     else:
@@ -346,12 +350,15 @@ def get_git_status():
     for line in output.split('\n'):
         origin_status = re.findall(
             r"Your branch is (ahead|behind).*?(\d+) comm", line)
+        diverged_status = re.findall(r"and have (\d+) and (\d+) different commits each", line)
         if origin_status:
             origin_position = " %d" % int(origin_status[0][1])
             if origin_status[0][0] == 'behind':
                 origin_position += u'\u21E3'
             if origin_status[0][0] == 'ahead':
                 origin_position += u'\u21E1'
+        if diverged_status:
+            origin_position = " %d%c %d%c" % (int(diverged_status[0][0]), u'\u21E1', int(diverged_status[0][1]), u'\u21E3')
 
         if line.find('nothing to commit') >= 0:
             has_pending_commits = False

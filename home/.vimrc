@@ -106,6 +106,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'koron/codic-vim'
 NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'h1mesuke/vim-alignta'
 
 call neobundle#end()
 

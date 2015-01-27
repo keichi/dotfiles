@@ -87,7 +87,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'yuroyoro/vim-autoclose'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'yuroyoro/vimdoc_ja'
@@ -107,6 +106,8 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'koron/codic-vim'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'rhysd/vim-operator-surround'
 
 call neobundle#end()
 
@@ -157,9 +158,8 @@ let NERDSpaceDelims = 1
 
 "Settings for CtrlP
 nnoremap s <Nop>
-nnoremap sa :<C-u>CtrlP<Space>
 nnoremap sb :<C-u>CtrlPBuffer<CR>
-nnoremap sd :<C-u>CtrlPDir<CR>
+" nnoremap sd :<C-u>CtrlPDir<CR>
 nnoremap sl :<C-u>CtrlPLine<CR>
 nnoremap sm :<C-u>CtrlPMRUFiles<CR>
 nnoremap sp :<C-u>CtrlP<CR>
@@ -175,8 +175,13 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 
+" Settings for vim-operator-surround
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+
 "Settings for QuickRun
-nnoremap sr :<C-u>QuickRun<CR>
+nnoremap sc :<C-u>QuickRun<CR>
 let g:quickrun_config={'*': {'split': ''}}
 set splitbelow
 

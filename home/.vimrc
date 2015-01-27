@@ -1,13 +1,14 @@
 " エンコーディングを設定
+scriptencoding utf-8
 set encoding=utf-8
+"Vi互換をオフ
+if &compatible
+  set nocompatible
+endif
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer
-"Vi互換をオフ
-set nocompatible
 "変更中のファイルでも、保存しないで他のファイルを表示
 set hidden
-"コマンドライン補完を便利に
-set wildmenu
 "タイプ途中のコマンドを画面最下行に表示する
 set showcmd
 "タブ文字、行末など不可視文字を表示する
@@ -97,7 +98,6 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'toyamarinyon/vim-swift'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'plasticboy/vim-markdown'
@@ -166,12 +166,13 @@ nnoremap sp :<C-u>CtrlP<CR>
 nnoremap sq :<C-u>CtrlPQuickfix<CR>
 nnoremap ss :<C-u>CtrlPMixed<CR>
 nnoremap st :<C-u>CtrlPTag<CR>
+nnoremap sw <C-w><C-w>
+nnoremap sn :bn<CR>
 nnoremap <C-p> :<C-u>CtrlPMixed<CR>
 let g:ctrlp_map = '<Nop>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 
 "Settings for QuickRun

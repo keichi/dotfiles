@@ -85,7 +85,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Bundles
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'yuroyoro/vim-autoclose'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'thinca/vim-quickrun'
@@ -107,7 +106,11 @@ NeoBundle 'koron/codic-vim'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kana/vim-operator-user'
+NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'rhysd/vim-operator-surround'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'osyo-manga/vim-textobj-multiblock'
+NeoBundle 'Townk/vim-autoclose'
 
 call neobundle#end()
 
@@ -117,14 +120,14 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
-"vim-airline
+" vim-airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 set laststatus=2
 set t_Co=256
 let g:airline#extensions#tabline#enabled = 1
 
-"vim-indent-guides
+" vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
@@ -133,7 +136,7 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * : highlight IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * : highlight IndentGuidesEven ctermbg=black
 
-"necocomplcache
+" necocomplcache
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
@@ -145,18 +148,18 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
-"<TAB>: completion.
+" <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"<C-h>, <BS>: close popup and delete backword char.
+" <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-"NERD commenter
+" NERD commenter
 let NERDSpaceDelims = 1
 
-"Settings for CtrlP
+" Settings for CtrlP
 nnoremap s <Nop>
 nnoremap sb :<C-u>CtrlPBuffer<CR>
 " nnoremap sd :<C-u>CtrlPDir<CR>
@@ -180,12 +183,12 @@ map <silent>sa <Plug>(operator-surround-append)
 map <silent>sd <Plug>(operator-surround-delete)
 map <silent>sr <Plug>(operator-surround-replace)
 
-"Settings for QuickRun
+" Settings for QuickRun
 nnoremap sc :<C-u>QuickRun<CR>
 let g:quickrun_config={'*': {'split': ''}}
 set splitbelow
 
-"Settings for incsearch
+" Settings for incsearch
 set hlsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -197,6 +200,12 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" Settings for vim-textobj-multiblock
+omap ab <Plug>(textobj-multiblock-a)
+omap ib <Plug>(textobj-multiblock-i)
+vmap ab <Plug>(textobj-multiblock-a)
+vmap ib <Plug>(textobj-multiblock-i)
 
 "カラースキームを設定
 let g:molokai_original = 1

@@ -111,6 +111,7 @@ NeoBundle 'rhysd/vim-operator-surround'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'osyo-manga/vim-textobj-multiblock'
 NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
@@ -206,6 +207,11 @@ omap ab <Plug>(textobj-multiblock-a)
 omap ib <Plug>(textobj-multiblock-i)
 vmap ab <Plug>(textobj-multiblock-a)
 vmap ib <Plug>(textobj-multiblock-i)
+
+" Settings for NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "カラースキームを設定
 let g:molokai_original = 1

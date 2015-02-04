@@ -75,6 +75,8 @@ set autoindent
 set smarttab
 "ファイル内の <Tab> が対応する空白の数
 set tabstop=4
+"スペルチェックから日本語を外す
+set spelllang=en,cjk
 
 " Neobundleの初期化
 if has('vim_starting')
@@ -217,4 +219,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "カラースキームを設定
 let g:molokai_original = 1
 colorscheme molokai
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
 

@@ -6,6 +6,7 @@
 	editor = vim
 	compression = 0
 	precomposeunicode = true
+	quotepath = false
 [color]
 	ui = true
 [alias]

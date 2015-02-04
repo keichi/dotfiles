@@ -112,6 +112,7 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'osyo-manga/vim-textobj-multiblock'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'csscomb/vim-csscomb'
 
 call neobundle#end()
 

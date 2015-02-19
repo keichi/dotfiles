@@ -115,6 +115,8 @@ NeoBundle 'osyo-manga/vim-textobj-multiblock'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'csscomb/vim-csscomb'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'nsf/gocode'
 
 call neobundle#end()
 
@@ -146,7 +148,10 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
@@ -159,6 +164,7 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+set completeopt-=preview
 
 " NERD commenter
 let NERDSpaceDelims = 1

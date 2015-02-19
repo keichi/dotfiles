@@ -60,7 +60,11 @@ set backspace=indent,eol,start
 "行末の空白を保存時に自動的に削除するようにした
 autocmd BufWritePre * :%s/\s\+$//e
 "カラムガイドを表示
-set colorcolumn=80
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 "1行の長さ
 set textwidth=78
 

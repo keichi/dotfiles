@@ -134,7 +134,6 @@ NeoBundleCheck
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'
 set laststatus=2
-set t_Co=256
 let g:airline#extensions#tabline#enabled = 1
 
 " vim-indent-guides
@@ -227,8 +226,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "カラースキームを設定
-let g:molokai_original = 1
-colorscheme molokai
+colorscheme monokai
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 

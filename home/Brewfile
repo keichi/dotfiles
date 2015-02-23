@@ -1,58 +1,74 @@
-update
-upgrade
+tap 'caskroom/cask'
+tap 'homebrew/python'
+tap 'homebrew/science'
+tap 'homebrew/versions'
+tap 'homebrew/x11'
+tap 'peco/peco'
+tap 'sanemat/font'
+brew 'arping'
+brew 'boot2docker'
+brew 'cadaver'
+brew 'cgdb'
+brew 'ctags'
+brew 'dfc'
+brew 'docker'
+brew 'fish'
+brew 'ghc'
+brew 'git'
+brew 'global'
+brew 'go'
+brew 'htop-osx'
+brew 'httping'
+brew 'hub'
+brew 'hugo'
+brew 'iperf'
+brew 'jq'
+brew 'lorem'
+brew 'masscan'
+brew 'mono'
+brew 'mtr'
+brew 'nasm'
+brew 'nkf'
+brew 'nmap'
+brew 'node'
+brew 'opencv'
+brew 'openssl'
+brew 'pandoc'
+brew 'peco'
+brew 'rbenv'
+brew 'ricty', args: ['vim-powerline', 'powerline']
+brew 'sqlite'
+brew 'tag'
+brew 'tig'
+brew 'typesafe-activator'
+brew 'unrar'
+brew 'vim'
+brew 'wget'
+cask 'appcleaner'
+cask 'audacity'
+cask 'betterzipql'
+cask 'cyberduck'
+cask 'dropbox'
+cask 'github'
+cask 'iterm2'
+cask 'keka'
+cask 'kobito'
+cask 'macvim'
+cask 'mamp'
+cask 'mongohub'
+cask 'qlcolorcode'
+cask 'qlmarkdown'
+cask 'qlprettypatch'
+cask 'qlstephen'
+cask 'quicklook-csv'
+cask 'quicklook-json'
+cask 'sketch'
+cask 'skype'
+cask 'transmission'
+cask 'vagrant'
+cask 'virtualbox'
+cask 'vlc'
+cask 'wireshark'
+cask 'xamarin-studio'
+cask 'zeroxed'
 
-install docker
-install boot2docker
-install git
-install tig
-install iperf
-install nkf
-install tag
-install wget
-install rbenv
-install fish
-install scala
-install play
-install node
-install imagemagick
-install haskell-platform
-install mono
-install hub
-install unrar
-install pandoc
-install mrt dfc jq htop-osx
-install vim
-install ctags
-
-tap phinze/cask
-install brew-cask
-
-cask install dropbox
-cask install google-chrome
-cask install iterm2
-cask install macvim
-cask install transmission
-cask install virtualbox
-cask install vlc
-cask install vagrant
-cask install skype
-cask install github
-cask install cyberduck
-cask install kobito
-cask install keka
-cask install wireshark
-cask install mamp
-cask install mou
-cask install alfred
-cask install java
-cask install intellij-idea-ce
-cask install xamarin-studio
-cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
-cask install appcleaner
-cask install audacity
-
-tap sanemat/font
-install fontforge --with-python
-install --powerline --vim-powerline ricty
-
-cleanup

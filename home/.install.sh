@@ -2,9 +2,10 @@
 
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap Homebrew/brewdler
 
-# Install Homebrew Casks
-brew bundle
+# Install Homebrew Packages
+brew brewdle
 
 # Install NeoBundle
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh

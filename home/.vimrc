@@ -109,7 +109,6 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'koron/codic-vim'
-NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-textobj-user'
@@ -121,6 +120,9 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'csscomb/vim-csscomb'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'nsf/gocode'
+if version >= 703
+    NeoBundle 'haya14busa/incsearch.vim'
+endif
 
 call neobundle#end()
 

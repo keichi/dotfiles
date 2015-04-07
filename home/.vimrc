@@ -80,7 +80,7 @@ set smarttab
 "ファイル内の <Tab> が対応する空白の数
 set tabstop=4
 "スペルチェックから日本語を外す
-set spelllang=en,cjk
+set spelllang+=cjk
 
 " Neobundleの初期化
 if has('vim_starting')

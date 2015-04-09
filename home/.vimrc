@@ -131,6 +131,9 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+" previm
+let g:previm_enable_realtime = 1
+
 " vim-airline
 let g:airline_powerline_fonts=1
 let g:airline_theme='molokai'

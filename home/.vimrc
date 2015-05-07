@@ -199,6 +199,10 @@ let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 map <silent>sa <Plug>(operator-surround-append)
 map <silent>sd <Plug>(operator-surround-delete)
 map <silent>sr <Plug>(operator-surround-replace)
+let g:operator#surround#blocks = {
+\ 'mkd' : [
+\       { 'block' : ["```\n", "\n```"], 'motionwise' : ['line'], 'keys' : ['`'] },
+\ ] }
 
 " Settings for QuickRun
 nnoremap sc :<C-u>QuickRun<CR>

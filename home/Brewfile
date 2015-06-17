@@ -71,4 +71,4 @@ cask 'vlc'
 cask 'wireshark'
 cask 'xamarin-studio'
 cask 'zeroxed'
-
+cask 'haroopad'

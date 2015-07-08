@@ -253,3 +253,11 @@ colorscheme Monokai
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
+" Map leader related keys
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
+
+" Stop that window from popping up
+map q: :q
+

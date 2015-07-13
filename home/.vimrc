@@ -123,6 +123,10 @@ NeoBundleLazy 'jason0x43/vim-js-indent', {
 \ 'autoload' : {
 \   'filetypes' : ['typescript', 'javascript', 'html'] }
 \}
+NeoBundleLazy 'leafgarland/typescript-vim', {
+\ 'autoload' : {
+\   'filetypes' : ['typescript'] }
+\}
 if version >= 703
     NeoBundle 'haya14busa/incsearch.vim'
 endif
@@ -257,6 +261,10 @@ hi SpellBad cterm=underline ctermfg=red
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
+
+" Allow scrolling in insert mode using c-e and c-y
+inoremap <C-e> <C-x><C-e>
+inoremap <C-y> <C-x><C-y>
 
 " Stop that window from popping up
 map q: :q

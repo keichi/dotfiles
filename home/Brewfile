@@ -44,6 +44,8 @@ brew 'typesafe-activator'
 brew 'unrar'
 brew 'vim'
 brew 'wget'
+brew 'ag'
+
 cask 'appcleaner'
 cask 'audacity'
 cask 'betterzipql'

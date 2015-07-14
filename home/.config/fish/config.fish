@@ -31,6 +31,11 @@ set -x PYTHONPATH /usr/local/lib/python2.7/site-packages/ $PYTHONPATH
 set -x GOPATH $HOME/go
 set -x PATH $GOPATH/bin $PATH
 
+# CUDA
+set -x PATH /Developer/NVIDIA/CUDA-7.0/bin $PATH
+set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-7.0/lib $DYLD_LIBRARY_PATH
+
+
 alias cp="rsync --archive --human-readable --progress --verbose --whole-file"
 
 # ssh-agent

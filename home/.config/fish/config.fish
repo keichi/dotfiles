@@ -25,7 +25,7 @@ set -x EDITOR vim
 set -x LC_ALL ja_JP.UTF-8
 
 # Python
-eval (python -m virtualfish)
+eval (python -m virtualfish auto_activation)
 
 # Go
 set -x GOPATH $HOME/go

@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 
 import argparse
 import os
 import sys
 
 def warn(msg):
-    print '[powerline-bash] ', msg
+    print('[powerline-bash] ', msg)
 
 class Powerline:
     symbols = {
@@ -61,7 +62,7 @@ class Powerline:
         return self.color('48', code)
 
     def append(self, content, fg, bg, separator=None, separator_fg=None):
-        self.segments.append((content, fg, bg, 
+        self.segments.append((content, fg, bg,
             separator if separator is not None else self.separator,
             separator_fg if separator_fg is not None else bg))
 
@@ -88,21 +89,26 @@ def get_valid_cwd():
         We return the original cwd because the shell still considers that to be
         the working directory, so returning our guess will confuse people
     """
+    # Prefer the PWD environment variable. Python's os.getcwd function follows
+    # symbolic links, which is undesirable. But if PWD is not set then fall
+    # back to this func
     try:
-        cwd = os.getcwd()
+        cwd = os.getenv('PWD') or os.getcwd()
     except:
-        cwd = os.getenv('PWD')  # This is where the OS thinks we are
-        parts = cwd.split(os.sep)
-        up = cwd
-        while parts and not os.path.exists(up):
-            parts.pop()
-            up = os.sep.join(parts)
-        try:
-            os.chdir(up)
-        except:
-            warn("Your current directory is invalid.")
-            sys.exit(1)
-        warn("Your current directory is invalid. Lowest valid directory: " + up)
+        warn("Your current directory is invalid. If you open a ticket at " +
+            "https://github.com/milkbikis/powerline-shell/issues/new " +
+            "we would love to help fix the issue.")
+        sys.stdout.write("> ")
+        sys.exit(1)
+
+    parts = cwd.split(os.sep)
+    up = cwd
+    while parts and not os.path.exists(up):
+        parts.pop()
+        up = os.sep.join(parts)
+    if cwd != up:
+        warn("Your current directory is invalid. Lowest valid directory: "
+            + up)
     return cwd
 
 
@@ -230,6 +236,21 @@ class Color(DefaultColor):
     Because the segments require a 'Color' class for every theme.
     """
     pass
+
+
+import os
+
+def add_virtual_env_segment():
+    env = os.getenv('VIRTUAL_ENV')
+    if env is None:
+        return
+
+    env_name = os.path.basename(env)
+    bg = Color.VIRTUAL_ENV_BG
+    fg = Color.VIRTUAL_ENV_FG
+    powerline.append(' %s ' % env_name, fg, bg)
+
+add_virtual_env_segment()
 
 
 
@@ -401,134 +422,10 @@ except subprocess.CalledProcessError:
     pass
 
 
-import os
-import subprocess
-
-def get_hg_status():
-    has_modified_files = False
-    has_untracked_files = False
-    has_missing_files = False
-    output = subprocess.Popen(['hg', 'status'],
-            stdout=subprocess.PIPE).communicate()[0]
-    for line in output.split('\n'):
-        if line == '':
-            continue
-        elif line[0] == '?':
-            has_untracked_files = True
-        elif line[0] == '!':
-            has_missing_files = True
-        else:
-            has_modified_files = True
-    return has_modified_files, has_untracked_files, has_missing_files
-
-def add_hg_segment():
-    branch = os.popen('hg branch 2> /dev/null').read().rstrip()
-    if len(branch) == 0:
-        return False
-    bg = Color.REPO_CLEAN_BG
-    fg = Color.REPO_CLEAN_FG
-    has_modified_files, has_untracked_files, has_missing_files = get_hg_status()
-    if has_modified_files or has_untracked_files or has_missing_files:
-        bg = Color.REPO_DIRTY_BG
-        fg = Color.REPO_DIRTY_FG
-        extra = ''
-        if has_untracked_files:
-            extra += '+'
-        if has_missing_files:
-            extra += '!'
-        branch += (' ' + extra if extra != '' else '')
-    return powerline.append(' %s ' % branch, fg, bg)
-
-add_hg_segment()
-
-
-import subprocess
-
-def add_svn_segment():
-    is_svn = subprocess.Popen(['svn', 'status'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    is_svn_output = is_svn.communicate()[1].strip()
-    if len(is_svn_output) != 0:
-        return
-
-    #"svn status | grep -c "^[ACDIMRX\\!\\~]"
-    p1 = subprocess.Popen(['svn', 'status'], stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE)
-    p2 = subprocess.Popen(['grep', '-c', '^[ACDIMR\\!\\~]'],
-            stdin=p1.stdout, stdout=subprocess.PIPE)
-    output = p2.communicate()[0].strip()
-    if len(output) > 0 and int(output) > 0:
-        changes = output.strip()
-        powerline.append(' %s ' % changes, Color.SVN_CHANGES_FG, Color.SVN_CHANGES_BG)
-
-try:
-    add_svn_segment()
-except OSError:
-    pass
-except subprocess.CalledProcessError:
-    pass
-
-
-import os
-import subprocess
-
-def get_fossil_status():
-    has_modified_files = False
-    has_untracked_files = False
-    has_missing_files = False
-    output = os.popen('fossil changes 2>/dev/null').read().strip()
-    has_untracked_files = True if os.popen("fossil extras 2>/dev/null").read().strip() else False
-    has_missing_files = 'MISSING' in output
-    has_modified_files = 'EDITED' in output
-
-    return has_modified_files, has_untracked_files, has_missing_files
-
-def add_fossil_segment():
-    subprocess.Popen(['fossil'], stdout=subprocess.PIPE).communicate()[0]
-    branch = ''.join([i.replace('*','').strip() for i in os.popen("fossil branch 2> /dev/null").read().strip().split("\n") if i.startswith('*')])
-    if len(branch) == 0:
-        return
-
-    bg = Color.REPO_CLEAN_BG
-    fg = Color.REPO_CLEAN_FG
-    has_modified_files, has_untracked_files, has_missing_files = get_fossil_status()
-    if has_modified_files or has_untracked_files or has_missing_files:
-        bg = Color.REPO_DIRTY_BG
-        fg = Color.REPO_DIRTY_FG
-        extra = ''
-        if has_untracked_files:
-            extra += '+'
-        if has_missing_files:
-            extra += '!'
-        branch += (' ' + extra if extra != '' else '')
-    powerline.append(' %s ' % branch, fg, bg)
-
-try:
-    add_fossil_segment()
-except OSError:
-    pass
-except subprocess.CalledProcessError:
-    pass
-
-
-import os
-import re
-import subprocess
-
-def add_jobs_segment():
-    pppid = subprocess.Popen(['ps', '-p', str(os.getppid()), '-oppid='], stdout=subprocess.PIPE).communicate()[0].strip()
-    output = subprocess.Popen(['ps', '-a', '-o', 'ppid'], stdout=subprocess.PIPE).communicate()[0]
-    num_jobs = len(re.findall(str(pppid), output)) - 1
-
-    if num_jobs > 0:
-        powerline.append(' %d ' % num_jobs, Color.JOBS_FG, Color.JOBS_BG)
-
-add_jobs_segment()
-
-
 def add_root_indicator_segment():
     root_indicators = {
         'bash': ' \\$ ',
-        'zsh': ' \\$ ',
+        'zsh': ' %# ',
         'bare': ' $ ',
     }
     bg = Color.CMD_PASSED_BG

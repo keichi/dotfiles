@@ -25,7 +25,7 @@ set -x EDITOR vim
 set -x LC_ALL ja_JP.UTF-8
 
 # Python
-set -x PYTHONPATH /usr/local/lib/python2.7/site-packages/ $PYTHONPATH
+eval (python -m virtualfish)
 
 # Go
 set -x GOPATH $HOME/go
@@ -34,7 +34,6 @@ set -x PATH $GOPATH/bin $PATH
 # CUDA
 set -x PATH /Developer/NVIDIA/CUDA-7.0/bin $PATH
 set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-7.0/lib $DYLD_LIBRARY_PATH
-
 
 alias cp="rsync --archive --human-readable --progress --verbose --whole-file"
 

@@ -37,6 +37,10 @@ set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-7.0/lib $DYLD_LIBRARY_PATH
 
 alias cp="rsync --archive --human-readable --progress --verbose --whole-file"
 
+function fish_user_key_bindings
+    fish_vi_key_bindings
+end
+
 # ssh-agent
 setenv SSH_ENV $HOME/.ssh/environment
 

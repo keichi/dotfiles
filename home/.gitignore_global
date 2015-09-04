@@ -49,3 +49,5 @@ Session.vim
 ### ctags ###
 tags
 
+### python ###
+.venv

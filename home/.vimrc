@@ -130,6 +130,7 @@ NeoBundleLazy 'leafgarland/typescript-vim', {
 if version >= 703
     NeoBundle 'haya14busa/incsearch.vim'
 endif
+NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
 
@@ -246,6 +247,17 @@ omap ab <Plug>(textobj-multiblock-a)
 omap ib <Plug>(textobj-multiblock-i)
 vmap ab <Plug>(textobj-multiblock-a)
 vmap ib <Plug>(textobj-multiblock-i)
+
+" Settings for syntastic checker
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
 
 " Settings for NERDTree
 map <C-n> :NERDTreeToggle<CR>

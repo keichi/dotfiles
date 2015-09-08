@@ -75,3 +75,6 @@ cask 'wireshark'
 cask 'xamarin-studio'
 cask 'zeroxed'
 cask 'haroopad'
+cask 'java'
+cask 'intellij-idea'
+

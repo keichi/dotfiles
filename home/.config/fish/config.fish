@@ -29,6 +29,7 @@ eval (python -m virtualfish auto_activation)
 
 # Go
 set -x GOPATH $HOME/go
+set -x GOROOT /usr/local/opt/go/libexec
 set -x PATH $GOPATH/bin $PATH
 
 # CUDA

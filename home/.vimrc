@@ -130,6 +130,14 @@ if version >= 703
     NeoBundle 'haya14busa/incsearch.vim'
 endif
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 call neobundle#end()
 
@@ -257,6 +265,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_tex_checkers = ['lacheck']
 
 " Settings for NERDTree
 map <C-n> :NERDTreeToggle<CR>

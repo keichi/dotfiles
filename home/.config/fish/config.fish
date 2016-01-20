@@ -38,6 +38,11 @@ set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-7.0/lib $DYLD_LIBRARY_PATH
 
 alias cp="rsync --archive --human-readable --progress --verbose --whole-file"
 
+# Prevent "kqueue() FileSystemWatcher has reached the maximum nunmber of files
+# to watch."
+# c.f. https://github.com/aspnet/Home/issues/508
+set -x MONO_MANAGED_WATCHER false
+
 # direnv
 eval (direnv hook fish)
 

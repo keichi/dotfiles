@@ -55,6 +55,8 @@ set wildmenu
 autocmd QuickFixCmdPost *grep* cwindow
 "vim-markdownでのコードフォルディングを無効にする
 let g:vim_markdown_folding_disabled=1
+"vim-markdownでLaTeX数式文法を有効に
+let g:vim_markdown_math = 1
 "なんかバックスペースが効かなくなるときの対策
 set backspace=indent,eol,start
 "行末の空白を保存時に自動的に削除するようにした

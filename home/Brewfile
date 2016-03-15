@@ -47,6 +47,7 @@ brew 'unrar'
 brew 'vim'
 brew 'wget'
 brew 'ag'
+brew 'gnuplot', args: ['qt', 'pdflib-lite']
 
 cask 'xquartz'
 cask 'appcleaner'

@@ -17,9 +17,12 @@ set list
 set listchars=tab:>\ ,extends:<
 "行番号を表示する
 set number
+" 長い行を省略しない
+set display=lastline
 "閉じ括弧が入力されたとき、対応する括弧を表示する
 set showmatch
 "検索時に大文字を含んでいたら大/小を区別
+set ignorecase
 set smartcase
 "カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
@@ -49,8 +52,7 @@ set ttyfast
 vnoremap > >gv
 vnoremap < <gv
 "コマンドラインモードでファイル名補完をできるようにした
-set wildmode=longest:full
-set wildmenu
+set wildmode=longest,full
 "vimgrepの結果を常に別ウィンドウに表示するように
 autocmd QuickFixCmdPost *grep* cwindow
 "vim-markdownでのコードフォルディングを無効にする
@@ -104,7 +106,11 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'mattn/emmet-vim'
+NeoBundleLazy 'mattn/emmet-vim', {
+\ 'autoload' : {
+\   'filetypes' : ['javascript', 'html'] }
+\}
+NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -140,6 +146,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ }
+NeoBundle 'itchyny/thumbnail.vim'
 
 call neobundle#end()
 
@@ -215,7 +222,7 @@ nnoremap <C-p> :<C-u>CtrlPMixed<CR>
 let g:ctrlp_map = '<Nop>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.a
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 let g:ctrlp_use_caching = 0
 if executable('ag')
@@ -299,4 +306,8 @@ inoremap <C-y> <C-x><C-y>
 
 " Stop that window from popping up
 map q: :q
+
+" stop beeping
+set visualbell t_vb=
+set noerrorbells
 

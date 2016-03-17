@@ -194,6 +194,11 @@ set completeopt-=preview
 " NERD commenter
 let NERDSpaceDelims = 1
 
+" GitGutter
+nmap <Leader>ha <Plug>GitGutterStageHunk
+nmap <Leader>hu <Plug>GitGutterRevertHunk
+nmap <Leader>hv <Plug>GitGutterPreviewHunk
+
 " Settings for CtrlP
 nnoremap s <Nop>
 nnoremap sb :<C-u>CtrlPBuffer<CR>
@@ -251,6 +256,7 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 let g:incsearch#magic = '\v'
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " Settings for vim-textobj-multiblock
 omap ab <Plug>(textobj-multiblock-a)
@@ -284,6 +290,8 @@ hi SpellBad cterm=underline ctermfg=red
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
+nnoremap <Leader>b :silent make<CR>:redraw!<CR>
+nnoremap <Leader>o :silent make open<CR>:redraw!<CR>
 
 " Allow scrolling in insert mode using c-e and c-y
 inoremap <C-e> <C-x><C-e>

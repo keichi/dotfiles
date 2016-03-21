@@ -48,6 +48,7 @@ brew 'vim'
 brew 'wget'
 brew 'ag'
 brew 'gnuplot', args: ['qt', 'pdflib-lite']
+brew 'gibo'
 
 cask 'xquartz'
 cask 'appcleaner'

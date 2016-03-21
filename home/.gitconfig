@@ -12,6 +12,8 @@
 [alias]
       lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
       lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+      gc-branch = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+      gc-remote-branch = !git branch --remote --merged | grep -v \\* | xargs -I % git branch -r -d %
 
 [filter "media"]
 	required = true

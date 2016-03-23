@@ -71,6 +71,8 @@ else
 endif
 "1行の長さ
 set textwidth=78
+"削除でヤンクしない
+nnoremap x "_x
 
 "タブ関係の設定
 "タブの代わりに空白文字を挿入する

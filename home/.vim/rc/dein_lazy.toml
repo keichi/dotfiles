@@ -10,3 +10,11 @@ on_ft = ["typescript", "javascript", "html"]
 repo = "leafgarland/typescript-vim"
 on_ft = ["typescript"]
 
+[[plugins]]
+repo = "cespare/vim-toml"
+on_ft = ["toml"]
+
+[[plugins]]
+repo = "fatih/vim-go"
+on_ft = ["go"]
+

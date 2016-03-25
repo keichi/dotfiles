@@ -1,3 +1,5 @@
 .vim/ftplugin
 .vim/spell
+.vim/swap
+.vim/backup
 .vim/rc

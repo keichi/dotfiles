@@ -42,7 +42,7 @@ set directory=~/.vim/swap
 "Neobundleがfishでは動かなかったので
 set shell=/bin/bash
 "Yank to clipboard
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 "Helpを縦分割で開く
 nnoremap <Space>h :<C-u>vert bel h<Space>
 "スクロールを速くする
@@ -88,75 +88,45 @@ set tabstop=4
 "スペルチェックから日本語を外す
 set spelllang+=cjk
 
-" Neobundleの初期化
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+" dein.vimの設定
+
+let g:rc_dir = '~/.vim/rc'
+" プラグインが実際にインストールされるディレクトリ
+let s:dein_dir = expand('~/.cache/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-" Bundles
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'yuroyoro/vimdoc_ja'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'toyamarinyon/vim-swift'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundleLazy 'mattn/emmet-vim', {
-\ 'autoload' : {
-\   'filetypes' : ['javascript', 'html'] }
-\}
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'koron/codic-vim'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'kana/vim-operator-user'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'rhysd/vim-operator-surround'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'osyo-manga/vim-textobj-multiblock'
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'csscomb/vim-csscomb'
-NeoBundle 'fatih/vim-go'
-NeoBundleLazy 'jason0x43/vim-js-indent', {
-\ 'autoload' : {
-\   'filetypes' : ['typescript', 'javascript', 'html'] }
-\}
-NeoBundleLazy 'leafgarland/typescript-vim', {
-\ 'autoload' : {
-\   'filetypes' : ['typescript'] }
-\}
-if version >= 703
-    NeoBundle 'haya14busa/incsearch.vim'
+  " プラグインリストを収めた TOML ファイル
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
 endif
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-NeoBundle 'itchyny/thumbnail.vim'
 
-call neobundle#end()
+" もし、未インストールものものがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
 
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 " previm
 let g:previm_enable_realtime = 1

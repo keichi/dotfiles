@@ -1,0 +1,12 @@
+[[plugins]]
+repo = "mattn/emmet-vim"
+on_ft = ["javascript", "html"]
+
+[[plugins]]
+repo = "jason0x43/vim-js-indent"
+on_ft = ["typescript", "javascript", "html"]
+
+[[plugins]]
+repo = "leafgarland/typescript-vim"
+on_ft = ["typescript"]
+

@@ -1,0 +1,92 @@
+[[plugins]]
+repo = "nathanaelkane/vim-indent-guides"
+
+[[plugins]]
+repo = "Shougo/neocomplcache"
+
+[[plugins]]
+repo = "thinca/vim-quickrun"
+
+[[plugins]]
+repo = "yuroyoro/vimdoc_ja"
+
+[[plugins]]
+repo = "tpope/vim-fugitive"
+
+[[plugins]]
+repo = "vim-airline/vim-airline"
+
+[[plugins]]
+repo = "vim-airline/vim-airline-themes"
+
+[[plugins]]
+repo = "scrooloose/nerdcommenter"
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "Lokaltog/vim-easymotion"
+
+[[plugins]]
+repo = "toyamarinyon/vim-swift"
+
+[[plugins]]
+repo = "ctrlpvim/ctrlp.vim"
+
+[[plugins]]
+repo = "godlygeek/tabular"
+
+[[plugins]]
+repo = "plasticboy/vim-markdown"
+
+[[plugins]]
+repo = "kannokanno/previm"
+
+[[plugins]]
+repo = "tyru/open-browser.vim"
+
+[[plugins]]
+repo = "flazz/vim-colorschemes"
+
+[[plugins]]
+repo = "koron/codic-vim"
+
+[[plugins]]
+repo = "h1mesuke/vim-alignta"
+
+[[plugins]]
+repo = "kana/vim-operator-user"
+
+[[plugins]]
+repo = "kana/vim-textobj-user"
+
+[[plugins]]
+repo = "rhysd/vim-operator-surround"
+
+[[plugins]]
+repo = "derekwyatt/vim-scala"
+
+[[plugins]]
+repo = "osyo-manga/vim-textobj-multiblock"
+
+[[plugins]]
+repo = "Townk/vim-autoclose"
+
+[[plugins]]
+repo = "scrooloose/nerdtree"
+
+[[plugins]]
+repo = "csscomb/vim-csscomb"
+
+[[plugins]]
+repo = "fatih/vim-go"
+
+[[plugins]]
+repo = "haya14busa/incsearch.vim"
+
+[[plugins]]
+repo = "scrooloose/syntastic"
+
+[[plugins]]
+repo = "editorconfig/editorconfig-vim"

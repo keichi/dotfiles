@@ -87,6 +87,8 @@ set smarttab
 set tabstop=4
 "スペルチェックから日本語を外す
 set spelllang+=cjk
+" 日本語も自動で折り返されるようにする
+set fo+=m
 
 " dein.vimの設定
 

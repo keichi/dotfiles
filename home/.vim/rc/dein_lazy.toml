@@ -18,3 +18,14 @@ on_ft = ["toml"]
 repo = "fatih/vim-go"
 on_ft = ["go"]
 
+[[plugins]]
+repo = "eagletmt/ghcmod-vim"
+on_ft = ["haskell"]
+
+[[plugins]]
+repo = "eagletmt/neco-ghc"
+on_ft = ["haskell"]
+
+[[plugins]]
+repo = "itchyny/vim-haskell-indent"
+on_ft = ["haskell"]

@@ -5,3 +5,4 @@
 .vim/rc
 .stack/global-project
 .config/omf
+.stack

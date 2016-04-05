@@ -75,3 +75,8 @@ repo = "scrooloose/syntastic"
 
 [[plugins]]
 repo = "editorconfig/editorconfig-vim"
+
+[[plugins]]
+repo = "Shougo/vimproc"
+build = "make"
+

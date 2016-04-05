@@ -123,6 +123,11 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
+" vimprocだけは最初にインストールしてほしい
+if dein#check_install(['vimproc'])
+  silent call dein#install(['vimproc'])
+endif
+
 " もし、未インストールものものがあったらインストール
 if dein#check_install()
   call dein#install()

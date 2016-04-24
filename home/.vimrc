@@ -108,11 +108,11 @@ endif
 
 " 設定開始
 if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
   " プラグインリストを収めた TOML ファイル
   let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  call dein#begin(s:dein_dir, [s:toml, s:lazy_toml])
 
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,      {'lazy': 0})
@@ -261,6 +261,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_tex_checkers = ['lacheck']
+let g:syntastic_javascript_checkers=['eslint']
 
 " Settings for NERDTree
 map <C-n> :NERDTreeToggle<CR>

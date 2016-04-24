@@ -273,6 +273,9 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
+" Use jpFormat.vim as gq
+set formatexpr=jpvim#formatexpr()
+
 "カラースキームを設定
 colorscheme Monokai
 hi clear SpellBad

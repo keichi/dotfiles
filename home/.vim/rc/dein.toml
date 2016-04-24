@@ -80,3 +80,6 @@ repo = "editorconfig/editorconfig-vim"
 repo = "Shougo/vimproc"
 build = "make"
 
+[[plugins]]
+repo = "fuenor/JpFormat.vim"
+

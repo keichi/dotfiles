@@ -18,15 +18,19 @@ cask electrum
 cask firefox
 cask github-desktop
 cask gitup
+cask google-japanese-ime
 cask iterm2
 cask java
 cask karabiner
 cask keka
 cask kitematic
+cask mactex
 cask macvim
 cask mactex
+cask mendeley-desktop
 cask near-lock
 cask netspot
+cask omnigraffle
 cask qlcolorcode
 cask qlmarkdown
 cask qlprettypatch
@@ -47,6 +51,7 @@ cask visual-studio-code
 cask vlc
 cask wireshark
 cask xld
+cask xquartz
 
 tap homebrew/binary
 
@@ -138,7 +143,7 @@ brew libpng --universal
 brew librsvg
 brew libsodium
 brew libsvm
-brew libtasn1 --universal --universal
+brew libtasn1 --universal
 brew libtiff --universal
 brew libtool --universal
 brew libusb-compat --universal
@@ -254,7 +259,6 @@ brew dieharder
 brew dirmngr
 brew gdb
 brew glib
-brew google-perftools
 brew hub
 brew jasper --universal
 brew libgpg-error
@@ -273,7 +277,6 @@ brew unrar
 appstore 443987910 1Password
 appstore 451732904 App Language Chooser
 appstore 458034879 Dash
-appstore 682658836 GarageBand
 appstore 409183694 Keynote
 appstore 715768417 Microsoft Remote Desktop
 appstore 409203825 Numbers
@@ -283,5 +286,4 @@ appstore 407963104 Pixelmator
 appstore 409789998 Twitter
 appstore 415571499 Windows Phone
 appstore 497799835 Xcode
-appstore 408981434 iMovie
 appstore 408981381 iPhoto

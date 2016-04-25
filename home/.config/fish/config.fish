@@ -6,6 +6,7 @@ source $OMF_PATH/init.fish
 
 set -x PATH $HOME/Library/Haskell/bin $PATH
 set -x PATH /usr/local/texlive/2013/bin/x86_64-darwin $PATH
+set -x PATH /usr/local/texlive/2015/bin/x86_64-darwin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH /usr/local/gcc-arm/bin $PATH
 set -x PATH $HOME/.local/bin $PATH

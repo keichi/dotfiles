@@ -49,8 +49,6 @@ cask xld
 
 tap homebrew/binary
 
-tap homebrew/brewdler
-
 tap homebrew/core
 brew aircrack-ng
 brew ansible

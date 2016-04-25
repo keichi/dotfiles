@@ -1,0 +1,288 @@
+
+# tap repositories and their packages
+
+tap argon/mas
+brew mas
+
+tap caskroom/cask
+cask 0ad
+cask appcleaner
+cask atom
+cask audacity
+cask betterzipql
+cask ccleaner
+cask charles
+cask cyberduck
+cask dropbox
+cask electrum
+cask firefox
+cask github-desktop
+cask gitup
+cask iterm2
+cask java
+cask karabiner
+cask keka
+cask kitematic
+cask macvim
+cask near-lock
+cask netspot
+cask qlcolorcode
+cask qlmarkdown
+cask qlprettypatch
+cask qlstephen
+cask quicklook-csv
+cask quicklook-json
+cask sequel-pro
+cask sketch
+cask skim
+cask skype
+cask slack
+cask sqlitebrowser
+cask suspicious-package
+cask transmission
+cask vagrant
+cask virtualbox
+cask visual-studio-code
+cask vlc
+cask wireshark
+cask xld
+
+tap homebrew/binary
+
+tap homebrew/brewdler
+
+tap homebrew/core
+brew aircrack-ng
+brew ansible
+brew argp-standalone
+brew arping
+brew atk
+brew autoconf
+brew automake
+brew awscli
+brew binutils
+brew bison
+brew c-ares
+brew cairo
+brew cflow
+brew cloog
+brew cmake
+brew ctags
+brew curl
+brew czmq
+brew d-bus
+brew deisctl
+brew dfc
+brew direnv
+brew eigen
+brew fish
+brew fontconfig --universal
+brew fontforge
+brew freetype --universal
+brew gcc --without-multilib
+brew gd --universal
+brew gdbm
+brew gdk-pixbuf
+brew geoip
+brew gettext
+brew gibo
+brew git
+brew global
+brew gmp
+brew gnome-icon-theme
+brew gnupg
+brew gnupg2
+brew gnuplot --with-qt --with-pdflib-lite
+brew gnutls
+brew go
+brew gobject-introspection
+brew gperftools
+brew gpg-agent
+brew gradle
+brew gsettings-desktop-schemas
+brew gsl
+brew gtk+
+brew gtk+3
+brew gtk-mac-integration
+brew gtksourceview
+brew gtksourceview3
+brew hadoop
+brew harfbuzz
+brew haskell-stack
+brew heroku-toolbelt
+brew hicolor-icon-theme
+brew htop-osx
+brew httping
+brew hugo
+brew icu4c
+brew ilmbase
+brew imagemagick
+brew intltool
+brew iperf
+brew isl
+brew jpeg --universal
+brew jq
+brew keybase
+brew libassuan
+brew libcroco
+brew libepoxy
+brew libevent
+brew libffi
+brew libgcrypt
+brew libgphoto2 --universal
+brew libicns --universal
+brew libksba
+brew libmpc
+brew libnet
+brew libnids
+brew libpng --universal
+brew librsvg
+brew libsodium
+brew libsvm
+brew libtasn1 --universal --universal
+brew libtiff --universal
+brew libtool --universal
+brew libusb-compat --universal
+brew libxml2
+brew libyaml
+brew libzip
+brew litmus
+brew little-cms2 --universal
+brew lorem
+brew lua
+brew mackup
+brew makedepend
+brew masscan
+brew maven
+brew mecab-ipadic
+brew mercurial
+brew mutt
+brew mysql
+brew nasm
+brew neon
+brew nettle
+brew nkf
+brew nmap
+brew node
+brew oniguruma
+brew open-mpi
+brew openssl --universal
+brew ossp-uuid
+brew pacvim
+brew pandoc
+brew pango
+brew pcre
+brew pdflib-lite
+brew pdsh
+brew peco
+brew pinentry
+brew pixman
+brew pkg-config
+brew portaudio
+brew pstree
+brew pth
+brew py2cairo
+brew pygobject
+brew pygobject3
+brew pygtk
+brew pygtksourceview
+brew python
+brew qt
+brew rarian
+brew rbenv
+brew readline
+brew rlwrap
+brew ruby-build
+brew sane-backends --universal
+brew sbt
+brew scala
+brew scons
+brew siege
+brew sqlite
+brew tag
+brew tig
+brew tokyo-cabinet
+brew tree
+brew unixodbc
+brew vim
+brew watch
+brew wget
+brew wine
+brew xz
+brew youtube-dl
+brew zeromq
+
+tap homebrew/dupes
+
+tap homebrew/php
+brew php70-apcu
+brew php70-opcache
+brew php70
+
+tap homebrew/python
+brew numpy
+
+tap homebrew/science
+brew opencv
+
+tap homebrew/versions
+
+tap homebrew/x11
+
+tap neovim/neovim
+
+tap nishanths/tap
+brew license
+
+tap peco/peco
+
+tap rcmdnk/file
+brew brew-file
+
+tap sanemat/font
+brew ricty --vim-powerline --powerline
+
+tap tldr-pages/tldr
+
+tap yudai/gotty
+brew gotty
+
+# Other Homebrew packages
+brew cadaver
+brew cgdb
+brew composer
+brew dieharder
+brew dirmngr
+brew gdb
+brew glib
+brew google-perftools
+brew hub
+brew jasper --universal
+brew libgpg-error
+brew librtlsdr
+brew libusb --universal
+brew mecab
+brew mpfr
+brew mtr
+brew openexr
+brew the_silver_searcher
+brew tldr
+brew typesafe-activator
+brew unrar
+
+# App Store applications
+appstore 443987910 1Password
+appstore 451732904 App Language Chooser
+appstore 458034879 Dash
+appstore 682658836 GarageBand
+appstore 409183694 Keynote
+appstore 715768417 Microsoft Remote Desktop
+appstore 409203825 Numbers
+appstore 412347921 OmmWriter
+appstore 409201541 Pages
+appstore 407963104 Pixelmator
+appstore 409789998 Twitter
+appstore 415571499 Windows Phone
+appstore 497799835 Xcode
+appstore 408981434 iMovie
+appstore 408981381 iPhoto

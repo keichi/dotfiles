@@ -195,6 +195,7 @@ brew qt
 brew rarian
 brew rbenv
 brew readline
+brew redpen
 brew rlwrap
 brew ruby-build
 brew sane-backends --universal

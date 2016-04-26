@@ -27,7 +27,6 @@ cask keka
 cask kitematic
 cask mactex
 cask macvim
-cask mactex
 cask mendeley-desktop
 cask near-lock
 cask netspot
@@ -55,6 +54,7 @@ cask xld
 cask xquartz
 
 tap homebrew/binary
+cask mactex
 
 tap homebrew/core
 brew aircrack-ng
@@ -86,6 +86,7 @@ brew fontforge
 brew freetype --universal
 brew gcc --without-multilib
 brew gd --universal
+brew gdb
 brew gdbm
 brew gdk-pixbuf
 brew geoip
@@ -259,7 +260,6 @@ brew cgdb
 brew composer
 brew dieharder
 brew dirmngr
-brew gdb
 brew glib
 brew hub
 brew jasper --universal

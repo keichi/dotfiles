@@ -5,7 +5,6 @@ tap argon/mas
 brew mas
 
 tap caskroom/cask
-cask 0ad
 cask appcleaner
 cask atom
 cask audacity
@@ -28,7 +27,6 @@ cask kitematic
 cask mactex
 cask macvim
 cask mendeley-desktop
-cask near-lock
 cask netspot
 cask omnigraffle
 cask qlcolorcode

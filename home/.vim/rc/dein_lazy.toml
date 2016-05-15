@@ -29,3 +29,7 @@ on_ft = ["haskell"]
 [[plugins]]
 repo = "itchyny/vim-haskell-indent"
 on_ft = ["haskell"]
+
+[[plugins]]
+repo = "derekwyatt/vim-scala"
+on_ft = ["scala"]

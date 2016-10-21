@@ -83,3 +83,5 @@ build = "make"
 [[plugins]]
 repo = "fuenor/JpFormat.vim"
 
+[[plugins]]
+repo = "wakatime/vim-wakatime"

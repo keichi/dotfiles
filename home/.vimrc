@@ -274,6 +274,13 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
+if executable('ocamlmerlin') && has('python')
+  let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  execute "set rtp+=" . g:opamshare . "/merlin/vim"
+endif
+
+autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/ocp-indent/vim"
+
 " Use jpFormat.vim as gq
 set formatexpr=jpvim#formatexpr()
 

@@ -10,6 +10,7 @@
 --exclude=vendor
 --exclude=*.min.js
 --exclude=node_modules
+--exclude=.direnv
 
 --langdef=CoffeeScript
 --langmap=CoffeeScript:.coffee

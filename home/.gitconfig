@@ -12,8 +12,9 @@
 [alias]
       lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
       lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-      gc-branch = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
-      gc-remote-branch = !git branch --remote --merged | grep -v \\* | xargs -I % git branch -r -d %
+      gc-branch = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
+      gc-remote-branch = !git branch --remote --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -r -d %
+      diffw = diff --color-words --word-diff
 
 [filter "media"]
 	required = true
@@ -25,3 +26,9 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[diff]
+	compactionHeuristic = true
+[pager]
+	diff = diff-highlight | less
+	show = diff-highlight | less
+	log = diff-highlight | less

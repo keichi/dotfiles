@@ -73,6 +73,8 @@ endif
 set textwidth=78
 "削除でヤンクしない
 nnoremap x "_x
+"gqでフォーマットした際にピリオドの後の空白文字を1つにする
+set nojoinspaces
 
 "タブ関係の設定
 "タブの代わりに空白文字を挿入する

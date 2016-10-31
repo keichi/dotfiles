@@ -10,9 +10,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install rcmdnk/file/brew-file
 brew file install
 
+# Install powerline
+pip install powerline-status
+
 # Install oh-my-fish and plugins
 curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
 omf install
-
-# Install powerline
-pip install powerline-status

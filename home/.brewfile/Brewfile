@@ -249,7 +249,6 @@ brew sslscan
 brew szip
 brew tag
 brew the_silver_searcher
-brew thefuck
 brew tig
 brew timidity
 brew tldr

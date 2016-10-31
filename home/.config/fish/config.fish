@@ -1,14 +1,24 @@
 # Path to Oh My Fish install.
-set -gx OMF_PATH "/Users/keichi/.local/share/omf"
+set -gx OMF_PATH "$HOME/.local/share/omf"
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-set -x PATH /usr/local/texlive/2016/bin/x86_64-darwin $PATH
-set -x PATH /usr/local/sbin $PATH
-set -x PATH /usr/local/gcc-arm/bin $PATH
-set -x PATH $HOME/.local/bin $PATH
-set -x PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
+if test -d /usr/local/texlive/2016/bin/x86_64-darwin
+    set -x PATH /usr/local/texlive/2016/bin/x86_64-darwin $PATH
+end
+if test -d /usr/local/sbin
+    set -x PATH /usr/local/sbin $PATH
+end
+if test -d /usr/local/gcc-arm/bin
+    set -x PATH /usr/local/gcc-arm/bin $PATH
+end
+if test -d $HOME/.local/bin
+    set -x PATH $HOME/.local/bin $PATH
+end
+if test -d /usr/local/share/git-core/contrib/diff-highlight
+    set -x PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
+end
 
 set -x EDITOR vim
 
@@ -31,6 +41,7 @@ alias ghci="stack ghci"
 alias runghc="stack runghc"
 alias runhaskell="stack runhaskell"
 
+alias brew="brew file brew"
 
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
@@ -46,5 +57,3 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 # OPAM configuration
 source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-
-eval (thefuck --alias | tr '\n' ';')

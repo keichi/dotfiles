@@ -87,7 +87,17 @@
 				"name": "many_tabs",
 				"highlight_groups": ["many_tabs"],
 				"exclude_function": "single_tab"
-			}
+			},
+            {
+                "function": "powerline.segments.common.bat.battery"
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "name": "time",
+                "args": {
+                    "format": "%m/%d %H:%M"
+                }
+            }
 		]
 	}
 }

@@ -25,7 +25,6 @@ set -x GOPATH $HOME/go
 set -x GOROOT /usr/local/opt/go/libexec
 set -x PATH $GOPATH/bin $PATH
 
-alias cp="rsync --archive --human-readable --progress --verbose --whole-file"
 alias ghc="stack ghc"
 alias ghci="stack ghci"
 alias runghc="stack runghc"

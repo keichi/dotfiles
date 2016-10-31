@@ -25,14 +25,15 @@ set -x GOPATH $HOME/go
 set -x GOROOT /usr/local/opt/go/libexec
 set -x PATH $GOPATH/bin $PATH
 
+# Haskell
 alias ghc="stack ghc"
 alias ghci="stack ghci"
 alias runghc="stack runghc"
 alias runhaskell="stack runhaskell"
 
-# Load homeshick
-source "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
+# Homeshick
+source "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
 # Powerline
 set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"

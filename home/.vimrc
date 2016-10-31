@@ -140,11 +140,17 @@ filetype plugin indent on
 " previm
 let g:previm_enable_realtime = 1
 
-" vim-airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='molokai'
+" added the sys.path.append so that powerline import works in virtualenv
+" the three powerline import lines do not work in virtualenv otherwise
+:if has('python')
+    python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+:endif
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
+set showtabline=2
+set noshowmode
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1
@@ -252,10 +258,11 @@ omap ib <Plug>(textobj-multiblock-i)
 vmap ab <Plug>(textobj-multiblock-a)
 vmap ib <Plug>(textobj-multiblock-i)
 
+" Below settings cannot coexist with powerline
 " Settings for syntastic checker
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1

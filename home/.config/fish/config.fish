@@ -25,10 +25,6 @@ set -x GOPATH $HOME/go
 set -x GOROOT /usr/local/opt/go/libexec
 set -x PATH $GOPATH/bin $PATH
 
-# CUDA
-set -x PATH /Developer/NVIDIA/CUDA-7.0/bin $PATH
-set -x DYLD_LIBRARY_PATH /Developer/NVIDIA/CUDA-7.0/lib $DYLD_LIBRARY_PATH
-
 alias cp="rsync --archive --human-readable --progress --verbose --whole-file"
 alias ghc="stack ghc"
 alias ghci="stack ghci"

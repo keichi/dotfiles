@@ -4,8 +4,7 @@ set -gx OMF_PATH "/Users/keichi/.local/share/omf"
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
 
-set -x PATH $HOME/Library/Haskell/bin $PATH
-set -x PATH /usr/local/texlive/2015/bin/x86_64-darwin $PATH
+set -x PATH /usr/local/texlive/2016/bin/x86_64-darwin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH /usr/local/gcc-arm/bin $PATH
 set -x PATH $HOME/.local/bin $PATH

@@ -79,3 +79,6 @@ repo = "fuenor/JpFormat.vim"
 
 [[plugins]]
 repo = "wakatime/vim-wakatime"
+
+[[plugins]]
+repo = "kylef/apiblueprint.vim"

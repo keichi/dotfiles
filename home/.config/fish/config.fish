@@ -34,9 +34,10 @@ alias runhaskell="stack runhaskell"
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
 
-function fish_prompt
-    ~/powerline-shell.py $status --shell bare ^/dev/null
-end
+# Powerline
+set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"
+powerline-daemon -q
+powerline-setup
 
 set fish_greeting
 

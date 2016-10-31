@@ -1,9 +1,12 @@
-# Path to Oh My Fish install.
-set -gx OMF_PATH "$HOME/.local/share/omf"
+# Basics
+set -x EDITOR vim
+set -x LC_ALL ja_JP.UTF-8
 
-# Load oh-my-fish configuration.
+# oh-my-fish
+set -gx OMF_PATH "$HOME/.local/share/omf"
 source $OMF_PATH/init.fish
 
+# PATH
 if test -d /usr/local/texlive/2016/bin/x86_64-darwin
     set -x PATH /usr/local/texlive/2016/bin/x86_64-darwin $PATH
 end
@@ -20,12 +23,7 @@ if test -d /usr/local/share/git-core/contrib/diff-highlight
     set -x PATH /usr/local/share/git-core/contrib/diff-highlight $PATH
 end
 
-set -x EDITOR vim
-
-set -x LC_ALL ja_JP.UTF-8
-
-# Python
-#
+# Pythonz
 if test -s $HOME/.pythonz/etc/pythonz.fish
     source $HOME/.pythonz/etc/pythonz.fish
 end
@@ -42,6 +40,7 @@ alias ghci="stack ghci"
 alias runghc="stack runghc"
 alias runhaskell="stack runhaskell"
 
+# Homebrew
 alias brew="brew file brew"
 
 # Homeshick
@@ -52,9 +51,11 @@ set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packag
 powerline-daemon -q
 powerline-setup
 
-set fish_greeting
-
+# iTerm2
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-# OPAM configuration
+# Ocaml
 source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+# Remove fish startup message
+set fish_greeting

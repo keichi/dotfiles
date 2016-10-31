@@ -33,10 +33,6 @@ alias runhaskell="stack runhaskell"
 # Load homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
-# Prevent "kqueue() FileSystemWatcher has reached the maximum nunmber of files
-# to watch."
-# c.f. https://github.com/aspnet/Home/issues/508
-set -x MONO_MANAGED_WATCHER false
 
 function fish_prompt
     ~/powerline-shell.py $status --shell bare ^/dev/null

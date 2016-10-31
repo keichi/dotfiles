@@ -14,6 +14,12 @@ set -x EDITOR vim
 
 set -x LC_ALL ja_JP.UTF-8
 
+# Python
+#
+if test -s $HOME/.pythonz/etc/pythonz.fish
+    source $HOME/.pythonz/etc/pythonz.fish
+end
+
 # Go
 set -x GOPATH $HOME/go
 set -x GOROOT /usr/local/opt/go/libexec

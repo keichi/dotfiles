@@ -31,9 +31,10 @@ if test -s $HOME/.pythonz/etc/pythonz.fish
 end
 
 # Go
-set -x GOPATH $HOME/go
-set -x GOROOT /usr/local/opt/go/libexec
-set -x PATH $GOPATH/bin $PATH
+if test -d $HOME/go
+    set -x GOPATH $HOME/go
+    set -x PATH $GOPATH/bin $PATH
+end
 
 # Haskell
 alias ghc="stack ghc"

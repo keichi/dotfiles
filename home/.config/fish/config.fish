@@ -41,3 +41,6 @@ end
 set fish_greeting
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# OPAM configuration
+source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true

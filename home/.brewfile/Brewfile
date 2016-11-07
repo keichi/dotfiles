@@ -54,8 +54,11 @@ cask wireshark
 cask xld
 cask xquartz
 
-tap homebrew/binary
+tap codeclimate/formulae
+brew codeclimate
 cask mactex
+
+tap homebrew/binary
 
 tap homebrew/core
 brew ansible

@@ -92,48 +92,42 @@ set spelllang+=cjk
 " 日本語も自動で折り返されるようにする
 set fo+=m
 
-" dein.vimの設定
+" plugの設定
 
-let g:rc_dir = '~/.vim/rc'
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+call plug#begin()
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Shougo/neocomplcache'
+Plug 'thinca/vim-quickrun'
+Plug 'yuroyoro/vimdoc_ja'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'h1mesuke/vim-alignta'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-user'
+Plug 'rhysd/vim-operator-surround'
+Plug 'osyo-manga/vim-textobj-multiblock'
+Plug 'Townk/vim-autoclose'
+Plug 'scrooloose/nerdtree'
+Plug 'haya14busa/incsearch.vim'
+Plug 'scrooloose/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fuenor/JpFormat.vim'
+Plug 'wakatime/vim-wakatime'
 
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-" 設定開始
-if dein#load_state(s:dein_dir)
-  " プラグインリストを収めた TOML ファイル
-  let s:toml      = g:rc_dir . '/dein.toml'
-  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-  call dein#begin(s:dein_dir, [s:toml, s:lazy_toml])
-
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-  " 設定終了
-  call dein#end()
-  call dein#save_state()
-endif
-
-" vimprocだけは最初にインストールしてほしい
-if dein#check_install(['Shougo/vimproc'])
-  call dein#install('Shougo/vimproc', 'build': 'make'})
-endif
-
-" もし、未インストールものものがあったらインストール
-if dein#check_install()
-  call dein#install()
-endif
+Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+call plug#end()
 
 filetype plugin indent on
 

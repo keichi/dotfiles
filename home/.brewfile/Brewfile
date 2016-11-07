@@ -88,6 +88,7 @@ brew dfc
 brew direnv
 brew dirmngr
 brew doctl
+brew doxygen
 brew eigen
 brew ffmpeg
 brew fish
@@ -261,6 +262,7 @@ brew tree
 brew typesafe-activator
 brew unixodbc
 brew unrar
+brew utf8proc
 brew vim
 brew watch
 brew wget

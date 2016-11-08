@@ -30,8 +30,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 set nowrapscan
 "常に構文強調を使う
 syntax enable
-"背景を暗く設定
-set background=dark
 "ルーラを表示
 set ruler
 "バックアップフォルダを指定
@@ -107,7 +105,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized'
 Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -288,8 +287,14 @@ autocmd FileType ocaml source substitute(system('opam config var share'), '\n$',
 " Use jpFormat.vim as gq
 set formatexpr=jpvim#formatexpr()
 
-"カラースキームを設定
-colorscheme Monokai
+" カラースキーム関連
+" 256色表示を強制
+set t_Co=256
+" 背景を暗く設定
+set background=dark
+" カラースキームを設定
+colorscheme solarized
+" スペルミスのハイライトを設定
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 

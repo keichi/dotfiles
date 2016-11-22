@@ -51,9 +51,6 @@ set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packag
 powerline-daemon -q
 powerline-setup
 
-# iTerm2
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
 # Ocaml
 source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 

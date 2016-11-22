@@ -50,7 +50,8 @@ set ttyfast
 vnoremap > >gv
 vnoremap < <gv
 "コマンドラインモードでファイル名補完をできるようにした
-set wildmode=longest,full
+set wildmode=longest,list,full
+set wildmenu
 "vimgrepの結果を常に別ウィンドウに表示するように
 autocmd QuickFixCmdPost *grep* cwindow
 "vim-markdownでのコードフォルディングを無効にする

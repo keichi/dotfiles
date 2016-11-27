@@ -12,7 +12,7 @@ import XMonad.Config.Xfce
 myStartupHook = do
     spawn "xscreensaver -no-splash"
     spawn "compton -b"
-    spawn "feh --bg-fill ~/Pictures/wallpaper/Sky.jpg"
+    spawn "feh --bg-fill ~/Pictures/Milky\\ Way.jpg"
 
 myTerminal = "urxvt"
 

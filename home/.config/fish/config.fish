@@ -56,3 +56,6 @@ source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 # Remove fish startup message
 set fish_greeting
+
+# dircolors
+eval (dircolors $HOME/.dircolors.256dark | head -n 1 | sed 's/^LS_COLORS=/set -x LS_COLORS /;s/;$//')

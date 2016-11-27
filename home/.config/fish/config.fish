@@ -47,7 +47,7 @@ alias brew="brew file brew"
 source "$HOME/.homesick/repos/homeshick/homeshick.fish"
 
 # Powerline
-set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"
+set fish_function_path $fish_function_path "$HOME/.local/lib/python2.7/site-packages/powerline/bindings/fish"
 powerline-daemon -q
 powerline-setup
 

@@ -106,8 +106,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
-" Plug 'flazz/vim-colorschemes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -294,7 +294,7 @@ set t_Co=256
 " 背景を暗く設定
 set background=dark
 " カラースキームを設定
-colorscheme solarized
+colorscheme molokai
 " スペルミスのハイライトを設定
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red

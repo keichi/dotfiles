@@ -1,0 +1,67 @@
+general {
+  colors = true
+  interval = 1
+  colors = true
+  color_good = "#36E592"
+  color_degraded = "#CE9726"
+  color_bad = "#CE4B4F"
+  color_separator = "#B3BEFF"
+  interval = 5
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "load"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "disk /"
+order += "battery 0"
+order += "volume master"
+order += "time"
+
+battery 0 {
+  last_full_capacity = true
+  format = " %percentage %remaining"
+  path = "/sys/class/power_supply/BAT0/uevent"
+}
+
+ethernet _first_ {
+# if you use %speed, i3status requires root privileges
+  format_up = " eth0   %quality  %essid   %bitrate  %ip"
+  format_down = ""
+}
+
+wireless _first_ {
+  format_up = "WiFi   %quality  %essid  %bitrate  %ip"
+  # format_down = "wlan0 "
+  format_down = ""
+}
+
+time {
+  format = "%m/%d(%a) %H:%M"
+}
+
+load {
+  format = " %1min"
+}
+
+cpu_usage {
+  format = " %usage"
+}
+
+cpu_temperature 0 {
+  format = " %degreesC"
+  max_threshold = "65"
+}
+
+disk "/" {
+  format = " %used/%total (%percentage_used)"
+}
+
+volume master {
+  format = " %volume"
+  format_muted = " %volume"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}

@@ -200,7 +200,7 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-exec --no-startup-id xrandr --dpi 220
+exec --no-startup-id xrandr --dpi 210
 
 # Start compositor
 exec --no-startup-id compton -b --config ~/.config/compton/compton.conf

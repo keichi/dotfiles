@@ -1,8 +1,0 @@
-package https://github.com/oh-my-fish/plugin-brew
-package https://github.com/oh-my-fish/plugin-bundler
-package https://github.com/oh-my-fish/plugin-cask
-package https://github.com/oh-my-fish/plugin-direnv
-package https://github.com/oh-my-fish/plugin-node
-package https://github.com/oh-my-fish/plugin-rbenv
-theme agnoster
-theme default

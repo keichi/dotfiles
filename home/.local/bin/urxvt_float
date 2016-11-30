@@ -1,2 +1,2 @@
 #!/bin/sh
-urxvt -g 90x25 -name "urxvt_float" "$@"
+urxvt -g 89x35 -name "urxvt_float" "$@"

@@ -123,7 +123,7 @@ Plug 'wakatime/vim-wakatime'
 
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }

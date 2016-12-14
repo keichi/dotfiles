@@ -8,7 +8,7 @@ URxvt.scrollStyle: rxvt
 URxvt.scrollBar: false
 URxvt*font: xft:Ricty:size=10:antialias=true
 
-URxvt.perl-ext-common: xim-onthespot
+URxvt.perl-ext-common: matcher,xim-onthespot
 URxvt.inputMethod: fcitx
 URxvt.preeditType: OnTheSpot
 

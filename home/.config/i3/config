@@ -15,12 +15,12 @@ set $mod Mod1
 # is used in the bar {} block below.
 font pango:Ricty, FontAwesome 8
 
-set $default_gaps_inner 7
-set $default_gaps_outer 7
+new_window none
+set $default_gaps_inner 10
+set $default_gaps_outer 0
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 smart_gaps on
-smart_borders on
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).

@@ -1,41 +1,24 @@
-# Environment variables
+# Global definitions
 #-------------------------------------------------------------------------------
-
-export EDITOR=vim
-export LC_ALL=ja_JP.UTF-8
-
-# PATH
-#-------------------------------------------------------------------------------
-
-if [[ -d /usr/local/texlive/2016/bin/x86_64-darwin ]]; then
-    export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
-fi
-
-if [[ -d $HOME/.local/bin ]]; then
-    export PATH=$HOME/.local/bin:$PATH
-fi
-
-if [[ -d /usr/local/share/git-core/contrib/diff-highlight ]]; then
-    export PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
+if [[ -f /etc/bashrc ]]; then
+    source /etc/bashrc
 fi
 
 # Programming languages
 #-------------------------------------------------------------------------------
 
+# direnv
+eval "$(direnv hook bash)"
+
 # Pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-
-# Go
-if [[ -d $HOME/go ]]; then
-    export GOPATH=$HOME/go
-    export PATH=$GOPATH/bin:$PATH
-fi
 
 # Haskell
 alias ghc="stack ghc"
 alias ghci="stack ghci"
 alias runghc="stack runghc"
 alias runhaskell="stack runhaskell"
+eval "$(stack --bash-completion-script stack)"
 
 # Tools
 #-------------------------------------------------------------------------------
@@ -47,4 +30,27 @@ alias brew="brew file brew"
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 
 # Powerline
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+source $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+# LaTeX Live
+if [[ -d /usr/local/texlive/2016/bin/x86_64-darwin ]]; then
+    PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
+fi
+
+# git-diff-highlight
+if [[ -d /usr/local/share/git-core/contrib/diff-highlight ]]; then
+    PATH=/usr/local/share/git-core/contrib/diff-highlight:$PATH
+fi
+
+# colordiff
+if [[ -x $(which colordiff) ]]; then
+    alias diff='colordiff -u'
+else
+    alias diff='diff -u'
+fi
+
+# TAU
+PATH=/home/keichi/Projects/tau-2.26/x86_64/bin:$PATH
+
+# Environment Modules
+[[ -f /usr/share/Modules/init/bash ]] && source /usr/share/Modules/init/bash

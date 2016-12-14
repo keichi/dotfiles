@@ -195,6 +195,10 @@ bar {
 
 for_window [class="Nautilus"] floating enable
 for_window [title="urxvt_float"] floating enable
+for_window [class="Google-chrome"] move to workspace 2:www, fullscreen
+for_window [class="vlc"] move to workspace 3:music
+for_window [class="Thunderbird"] move to workspace 4:comm
+for_window [class="Franz"] move to workspace 4:comm
 
 # Bind media keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute

@@ -201,6 +201,9 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
+# Print Screen
+bindsym Print exec scrot -e 'mv $f ~/Desktop/'
+
 exec --no-startup-id xrandr --dpi 210
 
 # Start compositor

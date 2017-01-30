@@ -52,3 +52,6 @@ PATH=/home/keichi/Projects/tau-2.26/x86_64/bin:$PATH
 
 # Environment Modules
 [[ -f /usr/share/Modules/init/bash ]] && source /usr/share/Modules/init/bash
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

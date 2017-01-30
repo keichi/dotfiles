@@ -8,7 +8,7 @@ fi
 #-------------------------------------------------------------------------------
 
 # direnv
-eval "$(direnv hook bash)"
+[[ -x $(which direnv) ]] && eval "$(direnv hook bash)"
 
 # Pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc

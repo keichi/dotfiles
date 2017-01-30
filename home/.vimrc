@@ -95,7 +95,7 @@ set fo+=m
 
 call plug#begin()
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Shougo/neocomplcache'
+Plug 'Valloric/YouCompleteMe'
 Plug 'thinca/vim-quickrun'
 Plug 'yuroyoro/vimdoc_ja'
 Plug 'tpope/vim-fugitive'
@@ -107,7 +107,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'flazz/vim-colorschemes'
-" Plug 'altercation/vim-colors-solarized'
 Plug 'h1mesuke/vim-alignta'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -130,6 +129,9 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 call plug#end()
 
 filetype plugin indent on
+
+" YouCompleteMe
+let g:ycm_python_binary_path = 'python'
 
 " previm
 let g:previm_enable_realtime = 1
@@ -154,30 +156,6 @@ let g:indent_guides_color_change_percent = 20
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * : highlight IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * : highlight IndentGuidesEven ctermbg=black
-
-" necocomplcache
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-set completeopt-=preview
 
 " NERD commenter
 let NERDSpaceDelims = 1

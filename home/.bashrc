@@ -23,8 +23,6 @@ eval "$(stack --bash-completion-script stack)"
 # Tools
 #-------------------------------------------------------------------------------
 
-# Homebrew
-alias brew="brew file brew"
 
 # Homeshick
 source $HOME/.homesick/repos/homeshick/homeshick.sh

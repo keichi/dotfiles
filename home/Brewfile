@@ -84,6 +84,8 @@ brew 'curl'
 brew 'zeromq'
 brew 'czmq'
 brew 'dbus'
+brew 'openmotif'
+brew 'ddd'
 brew 'dfc'
 brew 'direnv'
 brew 'libgpg-error'
@@ -217,6 +219,7 @@ brew 'net-snmp'
 brew 'nkf'
 brew 'nmap'
 brew 'node'
+brew 'numpy'
 brew 'ocaml'
 brew 'ocamlbuild'
 brew 'openexr'
@@ -254,8 +257,10 @@ brew 'speex'
 brew 'sslscan'
 brew 'sysdig'
 brew 'szip'
+brew 'tgif'
 brew 'the_silver_searcher'
 brew 'tig'
+brew 'tiger-vnc'
 brew 'timidity'
 brew 'tldr'
 brew 'tmux'
@@ -271,6 +276,7 @@ brew 'w3m'
 brew 'watch'
 brew 'wget'
 brew 'xdot'
+brew 'xpdf'
 brew 'youtube-dl'
 brew 'argon/mas/mas'
 brew 'homebrew/dupes/libpcap'
@@ -279,7 +285,6 @@ brew 'homebrew/php/php70'
 brew 'homebrew/php/composer'
 brew 'homebrew/php/php70-apcu'
 brew 'homebrew/php/php70-opcache'
-brew 'homebrew/python/numpy'
 brew 'homebrew/science/hdf5'
 brew 'homebrew/science/opencv'
 brew 'rcmdnk/file/brew-file'
@@ -330,7 +335,7 @@ cask 'vlc'
 cask 'wireshark'
 cask 'xld'
 mas 'Microsoft Remote Desktop', id: 715768417
-mas 'iPhoto', id: 408981381
+mas 'Twitter', id: 409789998
 mas '1Password', id: 443987910
 mas 'Key Codes', id: 414568915
 mas 'Xcode', id: 497799835
@@ -338,4 +343,4 @@ mas 'Blackmagic Disk Speed Test', id: 425264550
 mas 'Keynote', id: 409183694
 mas 'Dash', id: 458034879
 mas 'Day One', id: 1055511498
-mas 'Twitter', id: 409789998
+mas 'iPhoto', id: 408981381

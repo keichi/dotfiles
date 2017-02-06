@@ -50,6 +50,9 @@ fi
 # TAU
 PATH=/home/keichi/Projects/tau-2.26/x86_64/bin:$PATH
 
+# Open MPI
+PATH=/opt/ompi/bin:$PATH
+
 # Environment Modules
 [[ -f /usr/share/Modules/init/bash ]] && source /usr/share/Modules/init/bash
 

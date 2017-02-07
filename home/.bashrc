@@ -54,3 +54,10 @@ PATH=/opt/ompi/bin:$PATH
 
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Autocompletions
+#-------------------------------------------------------------------------------
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f /usr/local/etc/bash_completion.d/git-completion.bash ] && . /usr/local/etc/bash_completion.d/git-completion.bash
+[ -f /usr/local/etc/bash_completion.d/gibo-completion.bash ] && . /usr/local/etc/bash_completion.d/gibo-completion.bash
+[ -f /usr/local/etc/bash_completion.d/brew ] && . /usr/local/etc/bash_completion.d/brew

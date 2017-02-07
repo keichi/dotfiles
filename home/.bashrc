@@ -23,7 +23,6 @@ eval "$(stack --bash-completion-script stack)"
 # Tools
 #-------------------------------------------------------------------------------
 
-
 # Homeshick
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 
@@ -46,9 +45,6 @@ if [[ -x $(which colordiff) ]]; then
 else
     alias diff='diff -u'
 fi
-
-# TAU
-PATH=/home/keichi/Projects/tau-2.26/x86_64/bin:$PATH
 
 # Open MPI
 PATH=/opt/ompi/bin:$PATH

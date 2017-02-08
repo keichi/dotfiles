@@ -8,17 +8,19 @@ fi
 #-------------------------------------------------------------------------------
 
 # direnv
-[[ -x $(which direnv) ]] && eval "$(direnv hook bash)"
+type direnv > /dev/null 2>&1 && eval "$(direnv hook bash)"
 
 # Pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # Haskell
-alias ghc="stack ghc"
-alias ghci="stack ghci"
-alias runghc="stack runghc"
-alias runhaskell="stack runhaskell"
-eval "$(stack --bash-completion-script stack)"
+if type direnv > /dev/null 2>&1; then
+    alias ghc="stack ghc"
+    alias ghci="stack ghci"
+    alias runghc="stack runghc"
+    alias runhaskell="stack runhaskell"
+    eval "$(stack --bash-completion-script stack)"
+fi
 
 # Tools
 #-------------------------------------------------------------------------------
@@ -27,7 +29,7 @@ eval "$(stack --bash-completion-script stack)"
 source $HOME/.homesick/repos/homeshick/homeshick.sh
 
 # Powerline
-source $HOME/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+source /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
 # LaTeX Live
 if [[ -d /usr/local/texlive/2016/bin/x86_64-darwin ]]; then
@@ -40,7 +42,7 @@ if [[ -d /usr/local/share/git-core/contrib/diff-highlight ]]; then
 fi
 
 # colordiff
-if [[ -x $(which colordiff) ]]; then
+if type colordiff > /dev/null 2>&1; then
     alias diff='colordiff -u'
 else
     alias diff='diff -u'

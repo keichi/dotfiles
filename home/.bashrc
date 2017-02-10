@@ -57,6 +57,12 @@ PATH=/opt/ompi/bin:$PATH
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && source "/usr/local/etc/profile.d/autojump.sh"
 
+# Colorful ls
+if [[ "$(uname)" = 'Darwin' ]]; then
+    export LSCOLORS=ExDxcxdxBxegedabagacad
+    alias ls='ls -hG'
+fi
+
 # Autocompletions
 #-------------------------------------------------------------------------------
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

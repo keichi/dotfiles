@@ -11,7 +11,7 @@ fi
 type direnv > /dev/null 2>&1 && eval "$(direnv hook bash)"
 
 # Pythonz
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source "$HOME/.pythonz/etc/bashrc"
 
 # Haskell
 if type direnv > /dev/null 2>&1; then
@@ -26,7 +26,7 @@ fi
 #-------------------------------------------------------------------------------
 
 # Homeshick
-source $HOME/.homesick/repos/homeshick/homeshick.sh
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # Powerline
 source /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
@@ -55,7 +55,7 @@ PATH=/opt/ompi/bin:$PATH
 [[ -f /usr/share/Modules/init/bash ]] && source /usr/share/Modules/init/bash
 
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && source "/usr/local/etc/profile.d/autojump.sh"
 
 # Autocompletions
 #-------------------------------------------------------------------------------

@@ -136,10 +136,16 @@ let g:ycm_python_binary_path = 'python'
 " previm
 let g:previm_enable_realtime = 1
 
+let s:uname = system('uname -s')
+
 " added the sys.path.append so that powerline import works in virtualenv
 " the three powerline import lines do not work in virtualenv otherwise
 :if has('python')
-    python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+    :if (s:uname =~ 'Darwin')
+        python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages/")
+    :elseif (s:uname =~ 'Linux')
+        python import sys; sys.path.append("/usr/lib/python2.7/site-packages/")
+    :endif
     python from powerline.vim import setup as powerline_setup
     python powerline_setup()
     python del powerline_setup

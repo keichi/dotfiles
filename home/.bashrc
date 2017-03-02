@@ -14,7 +14,7 @@ type direnv > /dev/null 2>&1 && eval "$(direnv hook bash)"
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source "$HOME/.pythonz/etc/bashrc"
 
 # Haskell
-if type direnv > /dev/null 2>&1; then
+if type stack > /dev/null 2>&1; then
     alias ghc="stack ghc"
     alias ghci="stack ghci"
     alias runghc="stack runghc"
@@ -26,17 +26,14 @@ fi
 #-------------------------------------------------------------------------------
 
 # vim
-
 if [[ "$(uname)" = 'Darwin' ]]; then
     alias vim="reattach-to-user-namespace vim"
 fi
-
 
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # Powerline
-
 if [[ "$(uname)" = 'Darwin' ]]; then
     source "/usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh"
 elif [[ "$(uname)" = 'Linux' ]]; then

@@ -120,12 +120,14 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fuenor/JpFormat.vim'
 Plug 'wakatime/vim-wakatime'
 
+" 言語別のプラグイン
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'ryym/vim-riot'
 call plug#end()
 
 filetype plugin indent on

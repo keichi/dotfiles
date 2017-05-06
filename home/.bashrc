@@ -57,9 +57,6 @@ else
     alias diff='diff -u'
 fi
 
-# Open MPI
-PATH=/opt/ompi/bin:$PATH
-
 # Environment Modules
 [[ -f /usr/share/Modules/init/bash ]] && source /usr/share/Modules/init/bash
 

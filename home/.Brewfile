@@ -1,7 +1,6 @@
 tap 'argon/mas'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
-tap 'codeclimate/formulae'
 tap 'homebrew/binary'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
@@ -270,7 +269,6 @@ brew 'youtube-dl'
 brew 'yubico-piv-tool'
 brew 'argon/mas/mas'
 brew 'homebrew/dupes/libpcap'
-brew 'homebrew/games/dosbox-x'
 brew 'homebrew/php/php70'
 brew 'homebrew/php/composer'
 brew 'homebrew/php/php70-apcu'
@@ -330,7 +328,6 @@ cask 'yubikey-piv-manager'
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Twitter', id: 409789998
 mas '1Password', id: 443987910
-mas 'Key Codes', id: 414568915
 mas 'Xcode', id: 497799835
 mas 'Blackmagic Disk Speed Test', id: 425264550
 mas 'Keynote', id: 409183694

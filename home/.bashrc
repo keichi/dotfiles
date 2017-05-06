@@ -69,6 +69,16 @@ if [[ "$(uname)" = 'Darwin' ]]; then
     alias ls='ls -hG'
 fi
 
+# GPG Agent
+eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket &> /dev/null)
+GPG_TTY=$(tty)
+export GPG_TTY
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+    . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+fi
+
 # Autocompletions
 #-------------------------------------------------------------------------------
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

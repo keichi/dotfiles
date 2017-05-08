@@ -2,3 +2,5 @@
 BasedOnStyle: LLVM
 IndentWidth: 4
 BreakBeforeBraces: Linux
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true

@@ -239,9 +239,6 @@ brew 'sane-backends', args: ['universal']
 brew 'sbt'
 brew 'scala'
 brew 'scons'
-brew 'sdl'
-brew 'sdl_net'
-brew 'sdl_sound', args: ['with-libogg', 'with-libvorbis']
 brew 'socat'
 brew 'speex'
 brew 'sslscan'

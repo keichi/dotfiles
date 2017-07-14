@@ -22,6 +22,9 @@ if type stack > /dev/null 2>&1; then
     eval "$(stack --bash-completion-script stack)"
 fi
 
+# Rust (Cargo)
+[[ -d $HOME/.cargo/bin ]]; PATH=$PATH:$HOME/.cargo/bin
+
 # Tools
 #-------------------------------------------------------------------------------
 

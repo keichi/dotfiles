@@ -235,6 +235,7 @@ brew 'reattach-to-user-namespace'
 brew 'redis'
 brew 'rlwrap'
 brew 'ruby'
+brew 'rust', args: ['with-racer']
 brew 'sane-backends', args: ['universal']
 brew 'sbt'
 brew 'scala'

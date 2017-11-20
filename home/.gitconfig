@@ -1,7 +1,7 @@
 [user]
 	name = Keichi Takahashi
 	email = keichi.t@me.com
-	signingkey = 86C93199
+	signingkey = F636B179
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim

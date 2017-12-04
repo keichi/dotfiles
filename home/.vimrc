@@ -70,8 +70,6 @@ else
 endif
 "1行の長さ
 set textwidth=78
-"削除でヤンクしない
-nnoremap x "_x
 "gqでフォーマットした際にピリオドの後の空白文字を1つにする
 set nojoinspaces
 
@@ -116,6 +114,8 @@ Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fuenor/JpFormat.vim'
 Plug 'wakatime/vim-wakatime'
+Plug 'svermeulen/vim-easyclip'
+Plug 'tpope/vim-repeat'
 
 " 言語別のプラグイン
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }

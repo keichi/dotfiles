@@ -112,7 +112,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'haya14busa/incsearch.vim'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fuenor/JpFormat.vim'
 Plug 'wakatime/vim-wakatime'
@@ -234,21 +234,6 @@ omap ab <Plug>(textobj-multiblock-a)
 omap ib <Plug>(textobj-multiblock-i)
 vmap ab <Plug>(textobj-multiblock-a)
 vmap ib <Plug>(textobj-multiblock-i)
-
-" Below settings cannot coexist with powerline
-" Settings for syntastic checker
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_tex_checkers = ['lacheck']
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_go_checkers=['golint']
 
 " Settings for NERDTree
 map <C-n> :NERDTreeToggle<CR>

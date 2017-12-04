@@ -104,7 +104,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
-Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
 Plug 'h1mesuke/vim-alignta'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
@@ -255,10 +255,12 @@ set t_Co=256
 " 背景を暗く設定
 set background=dark
 " カラースキームを設定
-colorscheme molokai
+colorscheme base16-materia
 " スペルミスのハイライトを設定
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
+hi pythonStatement ctermfg=1
+hi pythonFunction ctermfg=3
 
 " Map leader related keys
 let mapleader = "\<Space>"
@@ -278,3 +280,40 @@ map q: :q
 set visualbell t_vb=
 set noerrorbells
 
+function! s:get_syn_id(transparent)
+  let synid = synID(line("."), col("."), 1)
+  if a:transparent
+    return synIDtrans(synid)
+  else
+    return synid
+  endif
+endfunction
+function! s:get_syn_attr(synid)
+  let name = synIDattr(a:synid, "name")
+  let ctermfg = synIDattr(a:synid, "fg", "cterm")
+  let ctermbg = synIDattr(a:synid, "bg", "cterm")
+  let guifg = synIDattr(a:synid, "fg", "gui")
+  let guibg = synIDattr(a:synid, "bg", "gui")
+  return {
+        \ "name": name,
+        \ "ctermfg": ctermfg,
+        \ "ctermbg": ctermbg,
+        \ "guifg": guifg,
+        \ "guibg": guibg}
+endfunction
+function! s:get_syn_info()
+  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
+  echo "name: " . baseSyn.name .
+        \ " ctermfg: " . baseSyn.ctermfg .
+        \ " ctermbg: " . baseSyn.ctermbg .
+        \ " guifg: " . baseSyn.guifg .
+        \ " guibg: " . baseSyn.guibg
+  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
+  echo "link to"
+  echo "name: " . linkedSyn.name .
+        \ " ctermfg: " . linkedSyn.ctermfg .
+        \ " ctermbg: " . linkedSyn.ctermbg .
+        \ " guifg: " . linkedSyn.guifg .
+        \ " guibg: " . linkedSyn.guibg
+endfunction
+command! SyntaxInfo call s:get_syn_info()

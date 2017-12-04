@@ -37,8 +37,6 @@ set backup
 set backupdir=~/.vim/backup
 set swapfile
 set directory=~/.vim/swap
-"Neobundleがfishでは動かなかったので
-set shell=/bin/bash
 "Yank to clipboard
 set clipboard=unnamed
 "Helpを縦分割で開く

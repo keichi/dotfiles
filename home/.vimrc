@@ -98,12 +98,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'h1mesuke/vim-alignta'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
@@ -122,7 +120,7 @@ Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-Plug 'ryym/vim-riot'
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 call plug#end()
 
 filetype plugin indent on
@@ -245,7 +243,7 @@ map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
 " Use jpFormat.vim as gq
-set formatexpr=jpvim#formatexpr()
+" set formatexpr=jpvim#formatexpr()
 
 " カラースキーム関連
 " 256色表示を強制

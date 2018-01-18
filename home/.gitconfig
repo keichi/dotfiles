@@ -1,7 +1,7 @@
 [user]
 	name = Keichi Takahashi
 	email = keichi.t@me.com
-	signingkey = F636B179
+	signingkey = 86C93199
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
@@ -33,3 +33,5 @@
 	diff = diff-highlight | less
 	show = diff-highlight | less
 	log = diff-highlight | less
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2

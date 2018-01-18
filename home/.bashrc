@@ -66,7 +66,6 @@ if [[ "$(uname)" = 'Darwin' ]]; then
 fi
 
 # GPG Agent
-eval $(gpg-agent --daemon --enable-ssh-support --use-standard-socket &> /dev/null)
 GPG_TTY=$(tty)
 export GPG_TTY
 if [ -f "${HOME}/.gpg-agent-info" ]; then

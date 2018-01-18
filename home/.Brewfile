@@ -130,18 +130,15 @@ brew 'libtasn1', args: ['universal']
 brew 'libunistring'
 brew 'nettle'
 brew 'p11-kit'
+brew 'pinentry-mac'
 brew 'gnutls'
 brew 'gsettings-desktop-schemas'
 brew 'glib-networking'
 brew 'global'
 brew 'gnome-icon-theme'
 brew 'gnu-sed'
-brew 'gnupg'
-brew 'pinentry'
-brew 'gpg-agent'
 brew 'libusb', args: ['universal']
 brew 'libusb-compat', args: ['universal']
-brew 'gnupg2'
 brew 'lua'
 brew 'gnuplot'
 brew 'gnuplot', args: ['with-cairo', 'with-qt']

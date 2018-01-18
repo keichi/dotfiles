@@ -28,10 +28,14 @@ fi
 # Tools
 #-------------------------------------------------------------------------------
 
+# ranger
+alias r=ranger
+
 # vim
 if [[ "$(uname)" = 'Darwin' ]]; then
     alias vim="reattach-to-user-namespace vim"
 fi
+alias e=vim
 
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"

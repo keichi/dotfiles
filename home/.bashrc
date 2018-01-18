@@ -36,13 +36,6 @@ fi
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-# Powerline
-if [[ "$(uname)" = 'Darwin' ]]; then
-    source "/usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh"
-elif [[ "$(uname)" = 'Linux' ]]; then
-    source "/usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh"
-fi
-
 # LaTeX Live
 if [[ -d /usr/local/texlive/2016/bin/x86_64-darwin ]]; then
     PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH

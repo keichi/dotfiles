@@ -13,3 +13,5 @@ export EDITOR=vim
 export LC_ALL=ja_JP.UTF-8
 export LESS='-R'
 export PATH
+
+export PS1='[\u@\h \W]\$ '

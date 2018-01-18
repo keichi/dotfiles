@@ -310,3 +310,6 @@ function! s:get_syn_info()
         \ " guibg: " . linkedSyn.guibg
 endfunction
 command! SyntaxInfo call s:get_syn_info()
+
+" Switch to command mode easier
+inoremap <silent> jj <esc>

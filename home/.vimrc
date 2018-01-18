@@ -112,6 +112,8 @@ Plug 'fuenor/JpFormat.vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " 言語別のプラグイン
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }
@@ -124,6 +126,19 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 call plug#end()
 
 filetype plugin indent on
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='powerlineish'
+
+" ALE
+let g:ale_linters = {
+\   'javascript': ['prettier'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'

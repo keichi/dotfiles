@@ -117,6 +117,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " 言語別のプラグイン
 Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }

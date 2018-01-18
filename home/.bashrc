@@ -65,7 +65,7 @@ fi
 
 # Colorful ls
 if [[ "$(uname)" = 'Darwin' ]]; then
-    export LSCOLORS=ExDxcxdxBxegedabagacad
+    export LSCOLORS=exfxcxdxbxegedabagacad
     alias ls='ls -hG'
 fi
 

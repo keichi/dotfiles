@@ -202,7 +202,6 @@ brew 'maven'
 brew 'mecab'
 brew 'mecab-ipadic'
 brew 'mercurial'
-brew 'mongodb', restart_service: true
 brew 'mpg123'
 brew 'mplayer'
 brew 'mtr'
@@ -314,11 +313,8 @@ cask 'yubikey-personalization-gui'
 cask 'yubikey-piv-manager'
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Twitter', id: 409789998
-mas '1Password', id: 443987910
 mas 'Xcode', id: 497799835
-mas 'Blackmagic Disk Speed Test', id: 425264550
 mas 'Keynote', id: 409183694
 mas 'Dash', id: 458034879
 mas 'Day One', id: 1055511498
-mas 'iPhoto', id: 408981381
 mas 'Trello', id: 1278508951

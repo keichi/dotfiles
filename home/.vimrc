@@ -116,8 +116,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " 言語別のプラグイン
-Plug 'jason0x43/vim-js-indent', { 'for': ['typescript', 'javascript', 'html'] }
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'posva/vim-vue', { 'for': ['vue'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
@@ -176,7 +177,7 @@ nnoremap ss :<C-u>CtrlPMixed<CR>
 nnoremap st :<C-u>CtrlPTag<CR>
 nnoremap sw <C-w><C-w>
 nnoremap sn :bn<CR>
-nnoremap <C-p> :<C-u>CtrlPMixed<CR>
+nnoremap <C-p> <Nop>
 let g:ctrlp_map = '<Nop>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -221,7 +222,6 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 let g:incsearch#magic = '\v'
-nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " Settings for vim-textobj-multiblock
 omap ab <Plug>(textobj-multiblock-a)

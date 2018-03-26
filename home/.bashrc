@@ -28,6 +28,11 @@ fi
 # Tools
 #-------------------------------------------------------------------------------
 
+# ls
+alias ll="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+
 # ranger
 alias r=ranger
 

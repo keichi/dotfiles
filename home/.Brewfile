@@ -139,15 +139,11 @@ brew 'libepoxy'
 brew 'gtk+3'
 brew 'py2cairo'
 brew 'pygobject'
-brew 'pygtk'
-brew 'gtk-mac-integration'
-brew 'gtksourceview'
 brew 'gtksourceview3'
 brew 'haskell-stack'
 brew 'highlight'
 brew 'htop-osx'
 brew 'xz', args: ['universal']
-brew 'python3'
 brew 'httpie'
 brew 'hub'
 brew 'hugo'
@@ -278,7 +274,6 @@ cask 'vlc'
 cask 'wireshark'
 cask 'xld'
 mas 'Microsoft Remote Desktop', id: 715768417
-mas 'Twitter', id: 409789998
 mas 'Xcode', id: 497799835
 mas 'Keynote', id: 409183694
 mas 'Dash', id: 458034879

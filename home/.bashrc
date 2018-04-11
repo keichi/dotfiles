@@ -75,13 +75,9 @@ if [[ "$(uname)" = 'Darwin' ]]; then
 fi
 
 # GPG Agent
-GPG_TTY=$(tty)
-export GPG_TTY
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    . "${HOME}/.gpg-agent-info"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-fi
+gpgconf --launch gpg-agent
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 # Autocompletions
 #-------------------------------------------------------------------------------

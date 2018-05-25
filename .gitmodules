@@ -1,0 +1,3 @@
+[submodule "home/.anyenv"]
+	path = home/.anyenv
+	url = https://github.com/riywo/anyenv

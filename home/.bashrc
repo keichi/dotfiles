@@ -25,6 +25,10 @@ fi
 # Rust (Cargo)
 [[ -d $HOME/.cargo/bin ]]; PATH=$PATH:$HOME/.cargo/bin
 
+# anyenv
+export PATH=$HOME/.anyenv/bin:$PATH
+eval "$(anyenv init -)"
+
 # Tools
 #-------------------------------------------------------------------------------
 

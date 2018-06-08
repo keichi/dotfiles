@@ -115,6 +115,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'qpkorr/vim-bufkill'
 
 " 言語別のプラグイン
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }

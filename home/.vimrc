@@ -172,14 +172,6 @@ nmap ss :Files<CR>
 nmap sa :Buffers<CR>
 nmap st :Tags<CR>
 
-" Settings for vim-operator-surround
-map <silent>sa <Plug>(operator-surround-append)
-map <silent>sd <Plug>(operator-surround-delete)
-map <silent>sr <Plug>(operator-surround-replace)
-let g:operator#surround#blocks = {
-\ 'mkd' : [
-\       { 'block' : ["```\n", "\n```"], 'motionwise' : ['line'], 'keys' : ['`'] },
-\ ] }
 nmap sn :bn<CR>
 nmap sp :bp<CR>
 
@@ -201,12 +193,6 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 let g:incsearch#magic = '\v'
-
-" Settings for vim-textobj-multiblock
-omap ab <Plug>(textobj-multiblock-a)
-omap ib <Plug>(textobj-multiblock-i)
-vmap ab <Plug>(textobj-multiblock-a)
-vmap ib <Plug>(textobj-multiblock-i)
 
 " Settings for NERDTree
 map <C-n> :NERDTreeToggle<CR>

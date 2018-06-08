@@ -97,7 +97,8 @@ Plug 'yuroyoro/vimdoc_ja'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
@@ -165,35 +166,10 @@ nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
 nmap <Leader>hv <Plug>GitGutterPreviewHunk
 
-" Settings for CtrlP
-nnoremap s <Nop>
-nnoremap sb :<C-u>CtrlPBuffer<CR>
-" nnoremap sd :<C-u>CtrlPDir<CR>
-nnoremap sl :<C-u>CtrlPLine<CR>
-nnoremap sm :<C-u>CtrlPMRUFiles<CR>
-nnoremap sp :<C-u>CtrlP<CR>
-nnoremap sq :<C-u>CtrlPQuickfix<CR>
-nnoremap ss :<C-u>CtrlPMixed<CR>
-nnoremap st :<C-u>CtrlPTag<CR>
-nnoremap sw <C-w><C-w>
-nnoremap sn :bn<CR>
-nnoremap <C-p> <Nop>
-let g:ctrlp_map = '<Nop>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.a
-let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
-let g:ctrlp_use_caching = 0
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-    \ }
-endif
+" fzf.vim
+nmap ss :Files<CR>
+nmap sa :Buffers<CR>
+nmap st :Tags<CR>
 
 " Settings for vim-operator-surround
 map <silent>sa <Plug>(operator-surround-append)
@@ -203,6 +179,8 @@ let g:operator#surround#blocks = {
 \ 'mkd' : [
 \       { 'block' : ["```\n", "\n```"], 'motionwise' : ['line'], 'keys' : ['`'] },
 \ ] }
+nmap sn :bn<CR>
+nmap sp :bp<CR>
 
 " Settings for QuickRun
 nnoremap sc :<C-u>QuickRun<CR>

@@ -83,6 +83,9 @@ gpgconf --launch gpg-agent
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Autocompletions
 #-------------------------------------------------------------------------------
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

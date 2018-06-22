@@ -7,11 +7,11 @@ fi
 
 export GOPATH=$HOME/go
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:$GOPATH/bin
+export PATH="$HOME/.local/bin:$HOME/bin:$GOPATH/bin:$PATH"
 
 export EDITOR=vim
 export LC_ALL=ja_JP.UTF-8
 export LESS='-R'
-export PATH
-
 export PS1='[\u@\h \W]\$ '
+
+export PATH="$HOME/.cargo/bin:$PATH"

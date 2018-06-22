@@ -99,7 +99,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'chriskempson/base16-vim'
@@ -109,7 +108,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'haya14busa/incsearch.vim'
 Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fuenor/JpFormat.vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
@@ -118,6 +116,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'qpkorr/vim-bufkill'
 
 " 言語別のプラグイン
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'posva/vim-vue', { 'for': ['vue'] }
@@ -182,10 +181,10 @@ set splitbelow
 
 " Settings for incsearch
 set hlsearch
+let g:incsearch#auto_nohlsearch = 1
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
@@ -204,9 +203,6 @@ map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
-
-" Use jpFormat.vim as gq
-" set formatexpr=jpvim#formatexpr()
 
 " カラースキーム関連
 " 256色表示を強制

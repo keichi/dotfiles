@@ -32,10 +32,15 @@ eval "$(anyenv init -)"
 # Tools
 #-------------------------------------------------------------------------------
 
-# ls
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="ls -la"
+# Use exa instead of ls if available
+if type exa > /dev/null 2>&1; then
+    alias ls='exa'
+fi
+
+# Use bat instead of cat if available
+if type bat > /dev/null 2>&1; then
+    alias cat='bat'
+fi
 
 # ranger
 alias r=ranger
@@ -72,12 +77,6 @@ fi
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && source "/usr/local/etc/profile.d/autojump.sh"
 
-# Colorful ls
-if [[ "$(uname)" = 'Darwin' ]]; then
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    alias ls='ls -hG'
-fi
-
 # GPG Agent
 gpgconf --launch gpg-agent
 export GPG_TTY=$(tty)
@@ -85,6 +84,10 @@ export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# spack
+export SPACK_ROOT=$HOME/.spack
+$SPACK_ROOT/share/spack/setup-env.sh
 
 # Autocompletions
 #-------------------------------------------------------------------------------

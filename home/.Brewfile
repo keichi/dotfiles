@@ -7,6 +7,8 @@ tap 'homebrew/services'
 tap 'keichi/open-mpi'
 tap 'sanemat/font'
 
+brew 'bat'
+brew 'exa'
 brew 'awscli'
 brew 'libyaml'
 brew 'openssl@1.1'

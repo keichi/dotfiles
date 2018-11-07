@@ -1278,6 +1278,9 @@ set print array off
 set print array-indexes on
 set python print-stack full
 
+# Workaround to fix "During startup program terminated with signal ?" error
+set startup-with-shell off
+
 # Start ------------------------------------------------------------------------
 
 python Dashboard.start()

@@ -114,6 +114,7 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'qpkorr/vim-bufkill'
+Plug 'rhysd/vim-clang-format'
 
 " 言語別のプラグイン
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }

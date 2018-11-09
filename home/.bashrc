@@ -87,7 +87,7 @@ export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 # spack
 export SPACK_ROOT=$HOME/.spack
-. $SPACK_ROOT/share/spack/setup-env.sh
+[ -f $SPACK_ROOT/share/spack/setup-env.sh ] && source "$SPACK_ROOT/share/spack/setup-env.sh"
 
 # Autocompletions
 #-------------------------------------------------------------------------------

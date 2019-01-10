@@ -7,8 +7,10 @@ tap 'homebrew/services'
 tap 'sanemat/font'
 
 brew 'bat'
+brew 'bfg'
 brew 'exa'
 brew 'awscli'
+brew 'circleci'
 brew 'libyaml'
 brew 'openssl@1.1'
 brew 'openssl', args: ['universal']

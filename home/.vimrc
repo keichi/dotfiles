@@ -91,6 +91,9 @@ set fo+=m
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+"ノーマルモードへ切り替える際の遅延を削減
+set ttimeoutlen=10
+
 " plugの設定
 
 call plug#begin()

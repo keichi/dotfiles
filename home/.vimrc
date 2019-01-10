@@ -87,6 +87,10 @@ set spelllang+=cjk
 " 日本語も自動で折り返されるようにする
 set fo+=m
 
+"インサートモード時にカーソル形状を変更
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " plugの設定
 
 call plug#begin()

@@ -134,6 +134,7 @@ Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 call plug#end()
 
 filetype plugin indent on

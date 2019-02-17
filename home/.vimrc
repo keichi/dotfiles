@@ -156,6 +156,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'

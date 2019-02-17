@@ -4,4 +4,4 @@ brew upgrade
 brew cask upgrade
 brew cleanup
 tldr -u
-vim -c PlugUpdate
+vim -c PlugUpdate -c qa

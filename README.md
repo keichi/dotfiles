@@ -12,13 +12,12 @@ Install homeshick and clone this repository:
 ```
 $ git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 $ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-$ homesick clone git@github.com:keichi/dotfiles.git
+$ homeshick clone git@github.com:keichi/dotfiles.git
 ```
 
 Install Homebrew, homebrew-bundle and formulae:
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-$ brew tap Homebrew/bundle
 $ brew bundle --global
 ```
 

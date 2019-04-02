@@ -130,14 +130,11 @@ Plug 'rhysd/vim-clang-format'
 
 " 言語別のプラグイン
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'posva/vim-vue', { 'for': ['vue'] }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 call plug#end()

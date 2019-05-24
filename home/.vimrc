@@ -103,7 +103,6 @@ set ttimeoutlen=10
 
 call plug#begin()
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Valloric/YouCompleteMe'
 Plug 'thinca/vim-quickrun'
 Plug 'yuroyoro/vimdoc_ja'
 Plug 'tpope/vim-fugitive'
@@ -131,6 +130,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/vim-clang-format'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 " 言語別のプラグイン
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -158,9 +158,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" YouCompleteMe
-let g:ycm_python_binary_path = 'python'
 
 " previm
 let g:previm_enable_realtime = 1

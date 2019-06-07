@@ -112,11 +112,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
-" vim 8.1以降でエラーが出るようになったのでフォークを使う
-" https://github.com/chriskempson/base16-vim/issues/197
-" https://github.com/chriskempson/base16-vim/pull/198
-" Plug 'chriskempson/base16-vim'
-Plug 'danielwe/base16-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'

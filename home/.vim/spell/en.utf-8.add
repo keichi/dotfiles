@@ -1,4 +1,3 @@
-Kirai-bashi
 smartphone
 RGB
 HCI
@@ -7,16 +6,13 @@ wirelessly
 Bluetooth
 BLE
 Gyrometer
-Acceleromter
 Accelerometer
 PCA
 FastICA
-#acebook
-Facebook/!
+Facebook
 GitHub
 LinkedIn
-#hopstciks
-chopstciks/!
+chopstciks
 mixi
 SNS
 TDW
@@ -31,7 +27,6 @@ NodeXL
 VBA
 MFC
 UI
-SAGE2/!
 SAGE2
 API
 CGLX
@@ -54,7 +49,6 @@ Keichi
 Takahashi
 untag
 untags
-parse/!
 parse
 out
 InfiniBand
@@ -122,4 +116,4 @@ ORNL
 SSN
 MVNO
 MySQL
-endianess
+endianness

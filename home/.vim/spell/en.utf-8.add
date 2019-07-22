@@ -117,3 +117,10 @@ SSN
 MVNO
 MySQL
 endianness
+HPC
+slurmctld
+slurmd
+sbatch
+srun
+squeue
+slurmdbd

@@ -1,2 +1,0 @@
-#!/bin/sh
-urxvt -g 89x35 -name "urxvt_float" "$@"

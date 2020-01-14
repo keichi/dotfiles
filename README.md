@@ -37,3 +37,9 @@ Install rustup if needed:
 ```
 $ rustup-init
 ```
+
+Install spack if needed:
+```
+$ git clone https://github.com/spack/spack.git .spack
+$ spack install environment-modules
+```

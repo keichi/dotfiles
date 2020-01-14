@@ -33,11 +33,6 @@ if type exa > /dev/null 2>&1; then
     alias ls='exa'
 fi
 
-# Use bat instead of cat if available
-if type bat > /dev/null 2>&1; then
-    alias cat='bat'
-fi
-
 # ranger
 alias r=ranger
 

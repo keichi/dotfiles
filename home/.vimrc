@@ -103,9 +103,6 @@ set ttimeoutlen=10
 
 call plug#begin()
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'thinca/vim-quickrun'
-Plug 'yuroyoro/vimdoc_ja'
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

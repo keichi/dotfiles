@@ -122,8 +122,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/vim-clang-format'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -142,10 +141,6 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 call plug#end()
 
 filetype plugin indent on
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='powerlineish'
 
 " ALE
 let g:ale_linters = {

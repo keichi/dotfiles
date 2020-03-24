@@ -120,6 +120,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'svermeulen/vim-easyclip'
 Plug 'tpope/vim-repeat'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/vim-clang-format'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -177,10 +178,37 @@ nmap st :Tags<CR>
 nmap sn :bn<CR>
 nmap sp :bp<CR>
 
-" Settings for QuickRun
-nnoremap sc :<C-u>QuickRun<CR>
-let g:quickrun_config={'*': {'split': ''}}
-set splitbelow
+" lightline
+set showtabline=2
+
+" custom color scheme for lightline
+let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
+let s:p.normal.left = [ ['darkestgreen', 'brightgreen', 'bold'], ['white', 'gray4'] ]
+let s:p.normal.right = [ ['gray5', 'gray10'], ['gray9', 'gray4'], ['gray8', 'gray2'] ]
+let s:p.inactive.right = [ ['gray1', 'gray5'], ['gray4', 'gray1'], ['gray4', 'gray0'] ]
+let s:p.inactive.left = s:p.inactive.right[1:]
+let s:p.insert.left = [ ['darkestcyan', 'white', 'bold'], ['white', 'darkblue'] ]
+let s:p.insert.right = [ [ 'darkestcyan', 'mediumcyan' ], [ 'mediumcyan', 'darkblue' ], [ 'mediumcyan', 'darkestblue' ] ]
+let s:p.replace.left = [ ['white', 'brightred', 'bold'], ['white', 'gray4'] ]
+let s:p.visual.left = [ ['darkred', 'brightorange', 'bold'], ['white', 'gray4'] ]
+let s:p.normal.middle = [ [ 'gray7', 'gray2' ] ]
+let s:p.insert.middle = [ [ 'mediumcyan', 'darkestblue' ] ]
+let s:p.replace.middle = s:p.normal.middle
+let s:p.replace.right = s:p.normal.right
+let s:p.tabline.left = [ [ 'gray9', 'gray4' ] ]
+let s:p.tabline.tabsel = [ ['darkestgreen', 'brightgreen', 'bold'] ]
+let s:p.tabline.middle = [ [ 'gray7', 'gray2' ] ]
+let s:p.tabline.right = [ [ 'gray9', 'gray3' ] ]
+let s:p.normal.error = [ [ 'gray9', 'brightestred' ] ]
+let s:p.normal.warning = [ [ 'gray1', 'yellow' ] ]
+let g:lightline#colorscheme#powerline_custom#palette = lightline#colorscheme#fill(s:p)
+
+let g:lightline                  = {'colorscheme': 'powerline_custom'}
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+
+let g:lightline#bufferline#show_number = 2
 
 " Settings for incsearch
 set hlsearch
@@ -229,6 +257,17 @@ nnoremap <Leader>w :w<CR>
 nmap <Leader><Leader> V
 nnoremap <Leader>b :silent make<CR>:redraw!<CR>
 nnoremap <Leader>o :silent make open<CR>:redraw!<CR>
+
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 " Allow scrolling in insert mode using c-e and c-y
 inoremap <C-e> <C-x><C-e>

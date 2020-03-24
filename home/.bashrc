@@ -13,15 +13,6 @@ type direnv > /dev/null 2>&1 && eval "$(direnv hook bash)"
 # Pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source "$HOME/.pythonz/etc/bashrc"
 
-# Haskell
-if type stack > /dev/null 2>&1; then
-    alias ghc="stack ghc"
-    alias ghci="stack ghci"
-    alias runghc="stack runghc"
-    alias runhaskell="stack runhaskell"
-    eval "$(stack --bash-completion-script stack)"
-fi
-
 # Rust (Cargo)
 [[ -d $HOME/.cargo/bin ]]; PATH=$PATH:$HOME/.cargo/bin
 
@@ -44,11 +35,6 @@ alias e=vim
 
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-
-# LaTeX Live
-if [[ -d /usr/local/texlive/2016/bin/x86_64-darwin ]]; then
-    PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
-fi
 
 # git-diff-highlight
 if [[ -d /usr/local/share/git-core/contrib/diff-highlight ]]; then

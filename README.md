@@ -21,11 +21,6 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ brew bundle --global
 ```
 
-Install TPM
-```
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
 Install vim-plug and vim plugins:
 ```
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

@@ -59,9 +59,6 @@ gpgconf --launch gpg-agent
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 # spack
 export SPACK_ROOT=$HOME/.spack
 [ -f $SPACK_ROOT/share/spack/setup-env.sh ] && source "$SPACK_ROOT/share/spack/setup-env.sh"

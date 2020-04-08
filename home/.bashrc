@@ -24,15 +24,6 @@ if type exa > /dev/null 2>&1; then
     alias ls='exa'
 fi
 
-# ranger
-alias r=ranger
-
-# vim
-if [[ "$(uname)" = 'Darwin' ]]; then
-    alias vim="reattach-to-user-namespace vim"
-fi
-alias e=vim
-
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 

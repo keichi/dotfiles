@@ -123,7 +123,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/vim-clang-format'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tyru/open-browser.vim'
 
 " 言語別のプラグイン

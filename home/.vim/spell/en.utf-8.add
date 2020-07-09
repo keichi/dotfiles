@@ -124,3 +124,9 @@ sbatch
 srun
 squeue
 slurmdbd
+zebrafish
+cppEDM
+mpEDM
+EDM
+timeseries
+ABCI

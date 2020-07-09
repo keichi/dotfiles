@@ -105,7 +105,7 @@ call plug#begin()
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kannokanno/previm'
 Plug 'chriskempson/base16-vim'
@@ -122,8 +122,8 @@ Plug 'tpope/vim-repeat'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'qpkorr/vim-bufkill'
-Plug 'rhysd/vim-clang-format'
 Plug 'tyru/open-browser.vim'
+Plug 'metakirby5/codi.vim'
 
 " 言語別のプラグイン
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -147,7 +147,9 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
 \   'javascript': ['prettier'],
+\   'python': ['isort', 'autopep8'],
 \}
+let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_c_parse_compile_commands = 1
 let g:ale_c_gcc_executable= 'gcc-9'
@@ -156,14 +158,8 @@ let g:ale_cpp_gcc_executable= 'g++-9'
 " previm
 let g:previm_enable_realtime = 1
 
-" vim-indent-guides
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_color_change_percent = 20
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * : highlight IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * : highlight IndentGuidesEven ctermbg=black
+" indentLine
+let g:indentLine_fileTypeExclude = ['markdown']
 
 " NERD commenter
 let NERDSpaceDelims = 1

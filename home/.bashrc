@@ -10,11 +10,13 @@ fi
 # direnv
 type direnv > /dev/null 2>&1 && eval "$(direnv hook bash)"
 
-# Pythonz
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source "$HOME/.pythonz/etc/bashrc"
-
 # Rust (Cargo)
 [[ -d $HOME/.cargo/bin ]]; PATH=$PATH:$HOME/.cargo/bin
+
+# Python (pyenv)
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # Tools
 #-------------------------------------------------------------------------------

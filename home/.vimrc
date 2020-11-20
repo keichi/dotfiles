@@ -102,7 +102,6 @@ set ttimeoutlen=10
 " plugの設定
 
 call plug#begin()
-Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

@@ -145,6 +145,8 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
+\   'objc': ['clang-format'],
+\   'objcpp': ['clang-format'],
 \   'javascript': ['prettier'],
 \   'python': ['isort', 'autopep8'],
 \}

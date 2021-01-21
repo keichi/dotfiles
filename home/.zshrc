@@ -14,8 +14,8 @@ fi
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # diff-highlight
-if [[ -d /opt/homebrew/share/git-core/contrib/diff-highlight ]]; then
-    export PATH=/opt/homebrew/share/git-core/contrib/diff-highlight:$PATH
+if [[ -d $(brew --prefix git)/share/git-core/contrib/diff-highlight ]]; then
+    export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
 fi
 
 # go

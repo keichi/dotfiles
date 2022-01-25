@@ -150,8 +150,8 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_c_parse_compile_commands = 1
-let g:ale_c_gcc_executable= 'gcc-9'
-let g:ale_cpp_gcc_executable= 'g++-9'
+let g:ale_c_gcc_executable= 'gcc-11'
+let g:ale_cpp_gcc_executable= 'g++-11'
 
 " previm
 let g:previm_enable_realtime = 1

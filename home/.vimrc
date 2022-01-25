@@ -128,9 +128,6 @@ Plug 'metakirby5/codi.vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'nbouscal/vim-stylish-haskell', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
@@ -231,12 +228,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Settings for rust
 let g:rustfmt_autosave = 1
-
-" Keymaps for ghc-mod
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
 
 " カラースキーム関連
 " 256色表示を強制

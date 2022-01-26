@@ -1,9 +1,5 @@
 # Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
-export CPATH="/opt/homebrew/include:$CPATH"
-export LIBRARY_PATH="/opt/homebrew/lib:$LIBRARY_PATH"
-export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
-export CMAKE_PREFIX_PATH="/opt/homebrew/share/cmake/Modules:$CMAKE_PREFIX_PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # exa
 if type exa > /dev/null 2>&1; then

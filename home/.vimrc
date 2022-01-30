@@ -147,7 +147,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'python': ['isort', 'autopep8'],
 \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_c_parse_compile_commands = 1
 let g:ale_c_gcc_executable= 'gcc-11'

@@ -1,6 +1,9 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# terminal color
+export TERM=xterm-256color
+
 # exa
 if type exa > /dev/null 2>&1; then
     alias ls='exa'
@@ -19,6 +22,9 @@ export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$P
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# ~/.loca/bin
+export PATH="$HOME/.local/bin:$PATH"
 
 # Zinit
 ### Added by Zinit's installer
@@ -51,3 +57,4 @@ zinit light-mode for \
 zinit snippet OMZP::autojump/autojump.plugin.zsh
 zinit snippet OMZP::direnv/direnv.plugin.zsh
 zinit snippet OMZP::gpg-agent/gpg-agent.plugin.zsh
+zinit snippet OMZP::pyenv/pyenv.plugin.zsh

@@ -1,15 +1,15 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# terminal color
+# Terminal color
 export TERM=xterm-256color
 
-# exa
+# Exa
 if type exa > /dev/null 2>&1; then
     alias ls='exa'
 fi
 
-# homeshick
+# Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # diff-highlight
@@ -17,10 +17,7 @@ if [[ -d $(brew --prefix git)/share/git-core/contrib/diff-highlight ]]; then
     export PATH=$(brew --prefix git)/share/git-core/contrib/diff-highlight:$PATH
 fi
 
-# go
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-
-# rust
+# Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # ~/.loca/bin

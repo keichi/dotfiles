@@ -1,3 +1,6 @@
+# locale
+export LANG=ja_JP.UTF-8
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

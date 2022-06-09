@@ -34,5 +34,3 @@
 	diff = diff-highlight | less
 	show = diff-highlight | less
 	log = diff-highlight | less
-[gpg]
-	program = /usr/local/MacGPG2/bin/gpg2

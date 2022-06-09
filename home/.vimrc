@@ -113,7 +113,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
-Plug 'w0rp/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'svermeulen/vim-easyclip'
@@ -123,39 +122,28 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tyru/open-browser.vim'
 Plug 'metakirby5/codi.vim'
-
-" 言語別のプラグイン
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'preservim/vim-markdown', { 'for': 'markdown' }
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
 filetype plugin indent on
 
-" ALE
-let g:ale_linters = {
-\   'cpp': ['clang++'],
-\   'javascript': ['prettier'],
-\}
-let g:ale_fixers = {
-\   'cpp': ['clang-format'],
-\   'objc': ['clang-format'],
-\   'objcpp': ['clang-format'],
-\   'javascript': ['prettier'],
-\   'python': ['isort', 'autopep8'],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_c_parse_compile_commands = 1
+" vim-lsp
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_float_delay = 200
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_float_cursor = 1
+
+" asynccomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " previm
 let g:previm_enable_realtime = 1
-
-" indentLine
-let g:indentLine_fileTypeExclude = ['markdown']
 
 " NERD commenter
 let NERDSpaceDelims = 1
@@ -203,8 +191,6 @@ let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
 
-let g:lightline#bufferline#show_number = 2
-
 " Settings for incsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
@@ -223,9 +209,6 @@ let g:incsearch#magic = '\v'
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Settings for rust
-let g:rustfmt_autosave = 1
 
 " カラースキーム関連
 " 256色表示を強制

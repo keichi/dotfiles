@@ -67,7 +67,6 @@ brew 'zeromq'
 
 cask 'adobe-acrobat-reader'
 cask 'appcleaner'
-cask 'ccleaner'
 cask 'dash'
 cask 'disk-inventory-x'
 cask 'dropbox'

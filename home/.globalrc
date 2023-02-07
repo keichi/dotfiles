@@ -96,7 +96,7 @@ exuberant-ctags|plugin-example|setting to use Exuberant Ctags plug-in parser:\
 	:langmap=Basic\:.bas.bi.bb.pb:\
 	:langmap=BETA\:.bet:\
 	:langmap=C\:.c:\
-	:langmap=C++\:.c++.cc.cp.cpp.cxx.h.h++.hh.hp.hpp.hxx.C.H:\
+	:langmap=C++\:.c++.cc.cp.cpp.cxx.h.h++.hh.hp.hpp.hxx.C.H.tcc.inl:\
 	:langmap=C#\:.cs:\
 	:langmap=Cobol\:.cbl.cob.CBL.COB:\
 	:langmap=DosBatch\:.bat.cmd:\

@@ -134,7 +134,8 @@ let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_float_delay = 200
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_float_cursor = 1
-autocmd BufWritePre * LspDocumentFormatSync
+let g:lsp_diagnostics_virtual_text_enabled = 0
+" autocmd BufWritePre * LspDocumentFormatSync
 
 " asynccomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

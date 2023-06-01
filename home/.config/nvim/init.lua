@@ -131,7 +131,6 @@ require("lazy").setup({
   },
   {
     "williamboman/mason.nvim",
-    build = "MasonUpdate",
     config = function()
       require("mason").setup()
     end
@@ -139,9 +138,7 @@ require("lazy").setup({
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
-      require("mason-lspconfig").setup {
-        automatic_installation = true
-      }
+      require("mason-lspconfig").setup()
     end
   },
   {

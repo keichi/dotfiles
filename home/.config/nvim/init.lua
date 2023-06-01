@@ -155,7 +155,7 @@ require("lazy").setup({
   },
   {
     "glepnir/lspsaga.nvim",
-    event = "LspAttach",
+    cmd = "Lspsaga",
     config = function()
         require("lspsaga").setup({})
     end,

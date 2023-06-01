@@ -9,9 +9,12 @@ vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-
+-- Allow switching from an unsaved buffer
+vim.opt.hidden = true
+-- Show line numbers
 vim.opt.number = true
 vim.opt.list = true
+-- Tab related
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.shiftwidth = 4
@@ -19,6 +22,7 @@ vim.opt.tabstop = 4
 vim.opt.ruler = true
 vim.opt.colorcolumn = "81"
 vim.opt.textwidth = 80
+-- Enable interop with system clipboard
 vim.opt.clipboard = "unnamedplus"
 vim.opt.whichwrap = "b,s,h,l,[,],<,>,~"
 -- Stop search at the bottom of the file
@@ -26,6 +30,9 @@ vim.opt.wrapscan = false
 -- Supposed to speedup rendering
 vim.opt.lazyredraw = true
 vim.opt.ttyfast = true
+-- Case-sensitive search if pattern contains capital case letter
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -57,7 +64,7 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
     config = function()
       require("nvim-tree").setup()
-      vim.keymap.set("", "<C-n>", ":NvimTreeToggle<CR>")
+      vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
     end
   },
   {
@@ -78,10 +85,49 @@ require("lazy").setup({
     end
   },
   {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-    },
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end
+  },
+  {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
+    end
+  },
+  { "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup {
+        numhl = true,
+      }
+    end
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        ensure_installed = { "c", "cpp", "fortran", "latex", "python",
+                             "markdown", "markdown_inline" },
+        highlight = { enable = true }
+      }
+    end
+  },
+  { "wakatime/vim-wakatime" },
+  { "famiu/bufdelete.nvim" },
+  { "j-hui/fidget.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("fidget").setup()
+    end
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup()
+    end
   },
   {
     "williamboman/mason.nvim",
@@ -108,58 +154,37 @@ require("lazy").setup({
     end
   },
   {
-    "numToStr/Comment.nvim",
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
     config = function()
-      require("Comment").setup()
-    end
+        require("lspsaga").setup({})
+    end,
+    dependencies = {
+      {"nvim-tree/nvim-web-devicons"},
+      --Please make sure you install markdown and markdown_inline parser
+      {"nvim-treesitter/nvim-treesitter"}
+    }
   },
   {
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup()
-    end
-  },
-  { "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    ensure_installed = { "c", "cpp", "fortran", "latex", "python" },
-    config = function()
-      vim.cmd("TSUpdate")
-    end
-  },
-  { "wakatime/vim-wakatime" },
-  { "famiu/bufdelete.nvim" },
-  { "j-hui/fidget.nvim",
-    config = function()
-      require("fidget").setup()
-    end
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
   },
 })
 
 -- Open nvim-tree on startup
 local function open_nvim_tree(data)
-  -- buffer is a directory
-  local directory = vim.fn.isdirectory(data.file) == 1
+  -- buffer is a real file on the disk
+  local real_file = vim.fn.filereadable(data.file) == 1
 
-  if not directory then
+  -- buffer is a [No Name]
+  local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+  if not real_file and not no_name then
     return
   end
 
-  -- create a new, empty buffer
-  vim.cmd.enew()
-
-  -- wipe the directory buffer
-  vim.cmd.bw(data.buf)
-
-  -- change to the directory
-  vim.cmd.cd(data.file)
-
-  -- open the tree
-  require("nvim-tree.api").tree.open()
+  -- open the tree, find the file but don't focus it
+  require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
@@ -168,14 +193,14 @@ vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
 -- Save buffer
-vim.keymap.set("n", "<Leader>s", ":w<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>s", "<Cmd>w<CR>", { noremap = true })
 
 -- Delete buffer while keeping window layout
-vim.keymap.set("n", "<Leader>w", ":Bdelete<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>w", "<Cmd>Bdelete<CR>", { noremap = true })
 
 -- Cycle between buffers
-vim.keymap.set("n", "sn", ":bn<CR>", { noremap = true })
-vim.keymap.set("n", "sp", ":bp<CR>", { noremap = true })
+vim.keymap.set("n", "sn", "<Cmd>bn<CR>", { noremap = true })
+vim.keymap.set("n", "sp", "<Cmd>bp<CR>", { noremap = true })
 
 -- (Un)Indent multiple timeps with > and < 
 vim.keymap.set("v", ">", ">gv")
@@ -184,3 +209,44 @@ vim.keymap.set("v", "<", "<gv")
 -- Scroll with <C-e> and <C-y> in insert mode
 vim.keymap.set("i", "<C-e>", "<C-x><C-e>")
 vim.keymap.set("i", "<C-y>", "<C-x><C-y>")
+
+-- Clear search highlight
+vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>", { noremap = true })
+
+-- LSP related
+
+-- LSP finder - Find the symbol's definition
+-- If there is no definition, it will instead be hidden
+-- When you use an action in finder like "open vsplit",
+-- you can use <C-t> to jump back
+vim.keymap.set("n", "gh", "<Cmd>Lspsaga lsp_finder<CR>")
+
+-- Code action
+vim.keymap.set({"n","v"}, "<Leader>ca", "<Cmd>Lspsaga code_action<CR>")
+
+-- Rename all occurrences of the hovered word for the entire file
+vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>")
+
+-- Peek definition
+-- You can edit the file containing the definition in the floating window
+-- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
+-- It also supports tagstack
+-- Use <C-t> to jump back
+vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>")
+
+-- Go to definition
+vim.keymap.set("n","gd", "<Cmd>Lspsaga goto_definition<CR>")
+
+-- Go to type definition
+vim.keymap.set("n","gt", "<Cmd>Lspsaga goto_type_definition<CR>")
+
+-- Hover Doc
+-- If there is no hover doc,
+-- there will be a notification stating that
+-- there is no information available.
+-- To disable it just use ":Lspsaga hover_doc ++quiet"
+-- Pressing the key twice will enter the hover window
+vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>")
+
+-- Floating terminal
+vim.keymap.set({"n", "t"}, "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>")

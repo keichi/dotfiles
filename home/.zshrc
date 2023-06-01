@@ -26,6 +26,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # ~/.loca/bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# nvim
+alias vim='nvim'
+alias vi='nvim'
+
 # Zinit
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then

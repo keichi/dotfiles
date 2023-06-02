@@ -130,6 +130,13 @@ require("lazy").setup({
     end
   },
   {
+    "asiryk/auto-hlsearch.nvim",
+    tag = "1.1.0",
+    config = function()
+      require("auto-hlsearch").setup()
+    end
+  },
+  {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()

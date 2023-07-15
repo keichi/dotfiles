@@ -20,8 +20,8 @@ vim.opt.autoindent = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.ruler = true
-vim.opt.colorcolumn = "81"
-vim.opt.textwidth = 80
+vim.opt.colorcolumn = "101"
+vim.opt.textwidth = 100
 -- Enable interop with system clipboard
 vim.opt.clipboard = "unnamedplus"
 vim.opt.whichwrap = "b,s,h,l,[,],<,>,~"

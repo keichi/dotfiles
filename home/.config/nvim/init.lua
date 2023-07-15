@@ -226,7 +226,7 @@ vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>", { noremap = true })
 vim.keymap.set("n", "gh", "<Cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-vim.keymap.set({"n","v"}, "<Leader>ca", "<Cmd>Lspsaga code_action<CR>")
+vim.keymap.set({"n", "v"}, "<Leader>ca", "<Cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the entire file
 vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>")
@@ -239,10 +239,13 @@ vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>")
 vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
-vim.keymap.set("n","gd", "<Cmd>Lspsaga goto_definition<CR>")
+vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>")
 
 -- Go to type definition
-vim.keymap.set("n","gt", "<Cmd>Lspsaga goto_type_definition<CR>")
+vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>")
+
+-- Format code
+vim.keymap.set("n", "gf", vim.lsp.buf.format)
 
 -- Hover Doc
 -- If there is no hover doc,

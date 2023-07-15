@@ -154,7 +154,7 @@ require("lazy").setup({
       local lspconfig = require("lspconfig")
       lspconfig.clangd.setup {}
       lspconfig.fortls.setup {}
-      lspconfig.pyright.setup {}
+      lspconfig.pylsp.setup {}
     end
   },
   {

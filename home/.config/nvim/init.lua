@@ -33,6 +33,9 @@ vim.opt.ttyfast = true
 -- Case-sensitive search if pattern contains capital case letter
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+-- Register spellfile
+vim.opt.spelllang = "en,cjk"
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

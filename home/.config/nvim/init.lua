@@ -1,7 +1,7 @@
 -- Set encoding to UTF-8
 vim.api.nvim_exec("language en_US.UTF-8", true)
 vim.scriptencoding = "utf-8"
-vim.opt.fileencoding = "uft-8"
+vim.opt.fileencoding = "utf-8"
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1

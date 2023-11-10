@@ -25,6 +25,8 @@ export PATH="$HOME/.local/bin:$PATH"
 alias vim='nvim'
 alias vi='nvim'
 
+export EDITOR=nvim
+
 # Zinit
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then

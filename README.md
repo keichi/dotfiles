@@ -21,11 +21,9 @@ Install Homebrew, homebrew-bundle and formulae:
 brew bundle --global
 ```
 
-Install vim-plug and vim plugins:
+Install neovim (Linux):
 ```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim # Run :PlugInstall
+curl -sL https://github.com/neovim/neovim/releases/download/v0.9.4/nvim-linux64.tar.gz | tar -C $HOME/.local  --strip-components 1 -xzvf -
 ```
 
 Install rustup if needed:

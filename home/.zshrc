@@ -7,11 +7,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Terminal color
 export TERM=xterm-256color
 
-# Exa
-if type exa > /dev/null 2>&1; then
-    alias ls='exa'
-fi
-
 # Homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 

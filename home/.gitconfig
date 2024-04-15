@@ -16,7 +16,6 @@
       gc-branch = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
       gc-remote-branch = !git branch --remote --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -r -d %
       diffw = diff --color-words --word-diff
-
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -35,3 +34,5 @@
 	diff = diff-highlight | less
 	show = diff-highlight | less
 	log = diff-highlight | less
+[init]
+	defaultBranch = main

@@ -1,0 +1,6 @@
+theme = tokyonight-storm
+font-family = "UDEV Gothic NF"
+font-size = 16
+font-feature = -dlig
+window-height = 40
+window-width = 110

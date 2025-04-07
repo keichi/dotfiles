@@ -52,7 +52,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "nvim-telescope/telescope.nvim", tag = "0.1.5",
+    "nvim-telescope/telescope.nvim", tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local builtin = require("telescope.builtin")
@@ -158,11 +158,28 @@ require("lazy").setup({
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       lspconfig.clangd.setup {
+        capabitilies = capabilities,
+        filetypes = {"c", "cpp", "objc", "objcpp", "cuda"}
+      }
+      lspconfig.fortls.setup {
         capabitilies = capabilities
       }
-      lspconfig.fortls.setup {}
       lspconfig.pylsp.setup {
-        capabitilies = capabilities
+        capabitilies = capabilities,
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = { enabled = false },
+              autopep8 = { enabled = false },
+              pyflakes = { enabled = false},
+              mccabe = { enabled = false},
+              pycodestyle = { enabled = false}
+            }
+          }
+        }
+      }
+      lspconfig.ruff.setup {
+        capabitilies = capabilitiese,
       }
     end
   },
@@ -170,7 +187,11 @@ require("lazy").setup({
     "glepnir/lspsaga.nvim",
     cmd = "Lspsaga",
     config = function()
-        require("lspsaga").setup({})
+        require("lspsaga").setup({
+          lightbulb = {
+            enabled = false
+          }
+        })
     end,
     dependencies = {
       {"nvim-tree/nvim-web-devicons"},
@@ -182,6 +203,7 @@ require("lazy").setup({
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
   },
+  { "onsails/lspkind.nvim" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-path" },
@@ -191,12 +213,16 @@ require("lazy").setup({
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
 
       cmp.setup({
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
+        },
+        formatting = {
+          format = lspkind.cmp_format({ maxwidth = 50 })
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -250,6 +276,35 @@ local function open_nvim_tree(data)
   require("nvim-tree.api").tree.toggle({ focus = false, find_file = true, })
 end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+
+-- Command to toggle inline diagnostics
+vim.api.nvim_create_user_command(
+  "DiagnosticsToggleVirtualText",
+  function()
+    local current_value = vim.diagnostic.config().virtual_text
+    if current_value then
+      vim.diagnostic.config({virtual_text = false})
+    else
+      vim.diagnostic.config({virtual_text = true})
+    end
+  end,
+  {}
+)
+
+-- Command to toggle diagnostics
+vim.api.nvim_create_user_command(
+  "DiagnosticsToggle",
+  function()
+    local current_value = vim.diagnostic.is_disabled()
+    if current_value then
+      vim.diagnostic.enable()
+    else
+      vim.diagnostic.disable()
+    end
+  end,
+  {}
+)
 
 -- Map leader key to <Space>
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })

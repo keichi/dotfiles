@@ -5,7 +5,7 @@
 Install Xcode tools and agree to its license:
 ```
 sudo xcode-select --install
-sudo xcrun cc
+sudo xcodebuild -license
 ```
 
 Install homeshick and clone this repository:
@@ -23,7 +23,7 @@ brew bundle --global
 
 Install neovim (Linux):
 ```
-curl -sL https://github.com/neovim/neovim/releases/download/v0.9.4/nvim-linux64.tar.gz | tar -C $HOME/.local  --strip-components 1 -xzvf -
+curl -sL https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz | tar -C $HOME/.local  --strip-components 1 -xzvf -
 ```
 
 Install rustup if needed:

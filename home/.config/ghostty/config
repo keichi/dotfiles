@@ -1,6 +1,10 @@
-theme = tokyonight-storm
+theme = "TokyoNight Storm"
 font-family = "UDEV Gothic NF"
 font-size = 16
 font-feature = -dlig
 window-height = 40
 window-width = 110
+keybind = shift+enter=text:\x1b\r
+unfocused-split-opacity = 0.8
+font-thicken = false
+macos-titlebar-style = transparent

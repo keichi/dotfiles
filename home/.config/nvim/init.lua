@@ -106,16 +106,6 @@ require("lazy").setup({
       }
     end
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        ensure_installed = { "c", "cpp", "fortran", "latex", "python",
-                             "markdown", "markdown_inline" },
-        highlight = { enable = true }
-      }
-    end
-  },
   { "wakatime/vim-wakatime" },
   { "famiu/bufdelete.nvim" },
   { "j-hui/fidget.nvim",
@@ -192,8 +182,6 @@ require("lazy").setup({
     end,
     dependencies = {
       {"nvim-tree/nvim-web-devicons"},
-      --Please make sure you install markdown and markdown_inline parser
-      {"nvim-treesitter/nvim-treesitter"}
     }
   },
   {

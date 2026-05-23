@@ -42,3 +42,6 @@ zinit snippet OMZP::autojump/autojump.plugin.zsh
 zinit snippet OMZP::direnv/direnv.plugin.zsh
 zinit snippet OMZP::gpg-agent/gpg-agent.plugin.zsh
 zinit snippet OMZP::pyenv/pyenv.plugin.zsh
+
+# Added by Antigravity
+export PATH="/Users/keichi/.antigravity/antigravity/bin:$PATH"

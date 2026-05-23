@@ -3,6 +3,9 @@ vim.api.nvim_exec("language en_US.UTF-8", true)
 vim.scriptencoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
+-- Font
+vim.opt.guifont = "UDEV Gothic NF:h15"
+
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -84,7 +87,7 @@ require("lazy").setup({
   {
     "folke/tokyonight.nvim",
     config = function()
-      vim.cmd("colorscheme tokyonight-moon")
+      vim.cmd("colorscheme tokyonight")
     end
   },
   {

@@ -154,33 +154,30 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.clangd.setup {
-        capabitilies = capabilities,
-        filetypes = {"c", "cpp", "objc", "objcpp", "cuda"}
-      }
-      lspconfig.fortls.setup {
-        capabitilies = capabilities
-      }
-      lspconfig.pylsp.setup {
-        capabitilies = capabilities,
+      vim.lsp.config("*", {
+        capabilities = capabilities,
+      })
+
+      vim.lsp.config("clangd", {
+        filetypes = {"c", "cpp", "objc", "objcpp", "cuda"},
+      })
+
+      vim.lsp.config("pylsp", {
         settings = {
           pylsp = {
             plugins = {
               pycodestyle = { enabled = false },
               autopep8 = { enabled = false },
-              pyflakes = { enabled = false},
-              mccabe = { enabled = false},
-              pycodestyle = { enabled = false}
+              pyflakes = { enabled = false },
+              mccabe = { enabled = false },
             }
           }
-        }
-      }
-      lspconfig.ruff.setup {
-        capabitilies = capabilitiese,
-      }
+        },
+      })
+
+      vim.lsp.enable({"clangd", "fortls", "pylsp", "ruff"})
     end
   },
   {

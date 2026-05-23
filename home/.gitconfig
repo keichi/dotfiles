@@ -1,21 +1,21 @@
 [user]
 	name = Keichi Takahashi
 	email = hello@keichi.dev
-	signingkey = 2C7ADC2CAEE32CCD2318D0AEEA6CC9BFBDAB9CBE
+	signingkey = 86B5891CE47C13D03C602599F75973901638EADE
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
 	compression = 0
 	precomposeunicode = true
 	quotepath = false
+    pager = delta
 [color]
 	ui = true
 [alias]
-      lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-      lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-      gc-branch = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
-      gc-remote-branch = !git branch --remote --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -r -d %
-      diffw = diff --color-words --word-diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	gc-branch = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
+	gc-remote-branch = !git branch --remote --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -r -d %
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -30,9 +30,12 @@
 	process = git-lfs filter-process
 [diff]
 	compactionHeuristic = true
-[pager]
-	diff = diff-highlight | less
-	show = diff-highlight | less
-	log = diff-highlight | less
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+[merge]
+	conflictStyle = zdiff3

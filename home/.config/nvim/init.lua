@@ -334,13 +334,13 @@ vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>", { noremap = true })
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
-vim.keymap.set("n", "gh", "<Cmd>Lspsaga lsp_finder<CR>")
+vim.keymap.set("n", "gh", "<Cmd>Lspsaga finder<CR>")
 
 -- Code action
 vim.keymap.set({"n", "v"}, "<Leader>ca", "<Cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the entire file
-vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>")
+vim.keymap.set("n", "grn", "<Cmd>Lspsaga rename<CR>")
 
 -- Peek definition
 -- You can edit the file containing the definition in the floating window

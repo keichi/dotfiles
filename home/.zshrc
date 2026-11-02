@@ -45,3 +45,8 @@ zinit snippet OMZP::pyenv/pyenv.plugin.zsh
 
 # Added by Antigravity
 export PATH="/Users/keichi/.antigravity/antigravity/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/keichi/.lmstudio/bin"
+# End of LM Studio CLI section
+

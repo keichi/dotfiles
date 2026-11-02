@@ -3,6 +3,10 @@ vim.api.nvim_exec("language en_US.UTF-8", true)
 vim.scriptencoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
+-- Map leader key to <Space> (must be set before plugins load)
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
+vim.g.mapleader = " "
+
 -- Font
 vim.opt.guifont = "UDEV Gothic NF:h15"
 
@@ -298,10 +302,6 @@ vim.api.nvim_create_user_command(
   end,
   {}
 )
-
--- Map leader key to <Space>
-vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
-vim.g.mapleader = " "
 
 -- Save buffer
 vim.keymap.set("n", "<Leader>s", "<Cmd>w<CR>", { noremap = true })

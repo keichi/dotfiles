@@ -187,15 +187,9 @@ require("lazy").setup({
       {"nvim-tree/nvim-web-devicons"},
     }
   },
-  {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
-  },
   { "onsails/lspkind.nvim" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-path" },
-  { "hrsh7th/cmp-cmdline" },
   {
     "hrsh7th/nvim-cmp",
     config = function()

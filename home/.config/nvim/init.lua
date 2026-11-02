@@ -71,7 +71,7 @@ require("lazy").setup({
   },
   {
     "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("nvim-tree").setup()
       vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>")
@@ -79,7 +79,7 @@ require("lazy").setup({
   },
   {
     "nvim-lualine/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons", opt = true },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("lualine").setup {
         tabline = {
@@ -90,22 +90,13 @@ require("lazy").setup({
   },
   {
     "EdenEast/nightfox.nvim",
+    priority = 1000,
     config = function()
       vim.cmd("colorscheme duskfox")
     end
   },
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup()
-    end
-  },
-  {
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup()
-    end
-  },
+  { "numToStr/Comment.nvim", opts = {} },
+  { "windwp/nvim-autopairs", opts = {} },
   { "lewis6991/gitsigns.nvim",
     config = function()
       require("gitsigns").setup {
@@ -115,38 +106,21 @@ require("lazy").setup({
   },
   { "wakatime/vim-wakatime" },
   { "famiu/bufdelete.nvim" },
-  { "j-hui/fidget.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("fidget").setup()
-    end
-  },
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup()
-    end
-  },
+  { "j-hui/fidget.nvim", event = "VeryLazy", opts = {} },
+  { "kylechui/nvim-surround", version = "*", event = "VeryLazy", opts = {} },
   {
     "asiryk/auto-hlsearch.nvim",
     tag = "1.1.0",
+    -- Not opts = {}: passing a table reaches vim.tbl_islist, deprecated in Nvim 0.12
     config = function()
       require("auto-hlsearch").setup()
     end
   },
-  {
-    "mason-org/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end
-  },
+  { "mason-org/mason.nvim", opts = {} },
   {
     "mason-org/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup()
-    end
+    dependencies = { "mason-org/mason.nvim" },
+    opts = {},
   },
   {
     "neovim/nvim-lspconfig",

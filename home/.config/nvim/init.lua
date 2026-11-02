@@ -1,6 +1,5 @@
 -- Set encoding to UTF-8
-vim.api.nvim_exec("language en_US.UTF-8", true)
-vim.scriptencoding = "utf-8"
+vim.cmd.language("en_US.UTF-8")
 vim.opt.fileencoding = "utf-8"
 
 -- Map leader key to <Space> (must be set before plugins load)
@@ -16,17 +15,13 @@ vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
--- Allow switching from an unsaved buffer
-vim.opt.hidden = true
 -- Show line numbers
 vim.opt.number = true
 vim.opt.list = true
 -- Tab related
 vim.opt.expandtab = true
-vim.opt.autoindent = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
-vim.opt.ruler = true
 vim.opt.colorcolumn = "101"
 vim.opt.textwidth = 100
 -- Enable interop with system clipboard
@@ -36,7 +31,6 @@ vim.opt.whichwrap = "b,s,h,l,[,],<,>,~"
 vim.opt.wrapscan = false
 -- Supposed to speedup rendering
 vim.opt.lazyredraw = true
-vim.opt.ttyfast = true
 -- Case-sensitive search if pattern contains capital case letter
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -45,7 +39,7 @@ vim.opt.spelllang = "en,cjk"
 vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -129,10 +123,6 @@ require("lazy").setup({
 
       vim.lsp.config("*", {
         capabilities = capabilities,
-      })
-
-      vim.lsp.config("clangd", {
-        filetypes = {"c", "cpp", "objc", "objcpp", "cuda"},
       })
 
       vim.lsp.config("pylsp", {
@@ -278,16 +268,16 @@ vim.api.nvim_create_user_command(
 )
 
 -- Save buffer
-vim.keymap.set("n", "<Leader>s", "<Cmd>w<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>s", "<Cmd>w<CR>")
 
 -- Delete buffer while keeping window layout
-vim.keymap.set("n", "<Leader>w", "<Cmd>Bdelete<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>w", "<Cmd>Bdelete<CR>")
 
 -- Cycle between buffers
-vim.keymap.set("n", "sn", "<Cmd>bn<CR>", { noremap = true })
-vim.keymap.set("n", "sp", "<Cmd>bp<CR>", { noremap = true })
+vim.keymap.set("n", "sn", "<Cmd>bn<CR>")
+vim.keymap.set("n", "sp", "<Cmd>bp<CR>")
 
--- (Un)Indent multiple timeps with > and < 
+-- (Un)Indent multiple times with > and <
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
@@ -296,7 +286,7 @@ vim.keymap.set("i", "<C-e>", "<C-x><C-e>")
 vim.keymap.set("i", "<C-y>", "<C-x><C-y>")
 
 -- Clear search highlight
-vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>", { noremap = true })
+vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>")
 
 -- LSP related
 

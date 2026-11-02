@@ -289,12 +289,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 vim.api.nvim_create_user_command(
   "DiagnosticsToggleVirtualText",
   function()
-    local current_value = vim.diagnostic.config().virtual_text
-    if current_value then
-      vim.diagnostic.config({virtual_text = false})
-    else
-      vim.diagnostic.config({virtual_text = true})
-    end
+    vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })
   end,
   {}
 )
@@ -303,12 +298,7 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
   "DiagnosticsToggle",
   function()
-    local current_value = vim.diagnostic.is_disabled()
-    if current_value then
-      vim.diagnostic.enable()
-    else
-      vim.diagnostic.disable()
-    end
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
   end,
   {}
 )

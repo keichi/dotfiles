@@ -137,13 +137,13 @@ require("lazy").setup({
     end
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = function()
       require("mason").setup()
     end
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup()
     end
@@ -178,7 +178,7 @@ require("lazy").setup({
     end
   },
   {
-    "glepnir/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     cmd = "Lspsaga",
     config = function()
         require("lspsaga").setup({

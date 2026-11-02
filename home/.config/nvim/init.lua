@@ -246,6 +246,25 @@ require("lazy").setup({
   },
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      -- Requires tree-sitter CLI: brew install tree-sitter-cli
+      require("nvim-treesitter").install({
+        "bash", "c", "cmake", "cpp", "cuda", "fortran", "javascript", "json", "latex", "lua",
+        "markdown", "markdown_inline", "python", "rust", "toml", "typescript", "yaml",
+      })
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          -- Fails for filetypes without a parser; those keep regex syntax
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
+    end
+  },
 })
 
 -- Open nvim-tree on startup

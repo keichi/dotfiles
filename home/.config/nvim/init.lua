@@ -89,7 +89,6 @@ require("lazy").setup({
       vim.cmd("colorscheme duskfox")
     end
   },
-  { "numToStr/Comment.nvim", opts = {} },
   { "windwp/nvim-autopairs", opts = {} },
   { "lewis6991/gitsigns.nvim",
     config = function()

@@ -73,6 +73,7 @@ require("lazy").setup({
   },
   {
     "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("lualine").setup {
@@ -97,7 +98,7 @@ require("lazy").setup({
       }
     end
   },
-  { "wakatime/vim-wakatime" },
+  { "wakatime/vim-wakatime", event = "VeryLazy" },
   { "famiu/bufdelete.nvim" },
   { "j-hui/fidget.nvim", event = "VeryLazy", opts = {} },
   { "kylechui/nvim-surround", version = "*", event = "VeryLazy", opts = {} },

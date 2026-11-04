@@ -131,9 +131,6 @@ require("lazy").setup({
           }
         },
       })
-
-      -- Mason-installed servers are enabled by mason-lspconfig; clangd comes from the system
-      vim.lsp.enable("clangd")
     end
   },
   {

@@ -138,7 +138,8 @@ require("lazy").setup({
         },
       })
 
-      vim.lsp.enable({"clangd", "fortls", "pylsp", "ruff"})
+      -- Mason-installed servers are enabled by mason-lspconfig; clangd comes from the system
+      vim.lsp.enable("clangd")
     end
   },
   {

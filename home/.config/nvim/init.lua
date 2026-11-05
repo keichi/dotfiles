@@ -23,6 +23,8 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.colorcolumn = "101"
+-- Border for floating windows (LSP hover, diagnostics, etc.)
+vim.opt.winborder = "bold"
 vim.opt.textwidth = 100
 -- Enable interop with system clipboard
 vim.opt.clipboard = "unnamedplus"

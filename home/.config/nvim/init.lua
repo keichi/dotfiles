@@ -134,20 +134,6 @@ require("lazy").setup({
     end
   },
   {
-    "nvimdev/lspsaga.nvim",
-    cmd = "Lspsaga",
-    config = function()
-        require("lspsaga").setup({
-          lightbulb = {
-            enabled = false
-          }
-        })
-    end,
-    dependencies = {
-      {"nvim-tree/nvim-web-devicons"},
-    }
-  },
-  {
     "saghen/blink.cmp",
     version = "1.*",
     event = "InsertEnter",
@@ -240,41 +226,12 @@ vim.keymap.set("n", "<ESC><ESC>", "<Cmd>nohlsearch<CR>")
 
 -- LSP related
 
--- LSP finder - Find the symbol's definition
--- If there is no definition, it will instead be hidden
--- When you use an action in finder like "open vsplit",
--- you can use <C-t> to jump back
-vim.keymap.set("n", "gh", "<Cmd>Lspsaga finder<CR>")
-
--- Code action
-vim.keymap.set({"n", "v"}, "<Leader>ca", "<Cmd>Lspsaga code_action<CR>")
-
--- Rename all occurrences of the hovered word for the entire file
-vim.keymap.set("n", "grn", "<Cmd>Lspsaga rename<CR>")
-
--- Peek definition
--- You can edit the file containing the definition in the floating window
--- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
--- It also supports tagstack
--- Use <C-t> to jump back
-vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>")
-
--- Go to definition
-vim.keymap.set("n", "gd", "<Cmd>Lspsaga goto_definition<CR>")
-
--- Go to type definition
-vim.keymap.set("n", "gt", "<Cmd>Lspsaga goto_type_definition<CR>")
+-- Built-in defaults (Neovim 0.11+): K hover, grn rename, gra code action,
+-- grr references, gri implementation, gO document symbols
+vim.keymap.set({"n", "v"}, "<Leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "gh", vim.lsp.buf.references)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gt", vim.lsp.buf.type_definition)
 
 -- Format code
 vim.keymap.set("n", "gf", vim.lsp.buf.format)
-
--- Hover Doc
--- If there is no hover doc,
--- there will be a notification stating that
--- there is no information available.
--- To disable it just use ":Lspsaga hover_doc ++quiet"
--- Pressing the key twice will enter the hover window
-vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>")
-
--- Floating terminal
-vim.keymap.set({"n", "t"}, "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>")

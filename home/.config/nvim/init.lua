@@ -142,7 +142,7 @@ require("lazy").setup({
   {
     "saghen/blink.cmp",
     version = "1.*",
-    event = "InsertEnter",
+    event = { "InsertEnter", "CmdlineEnter" },
     opts = {
       keymap = {
         preset = "enter",
@@ -150,6 +150,13 @@ require("lazy").setup({
         ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       },
       completion = { documentation = { auto_show = true } },
+      cmdline = {
+        keymap = {
+          preset = "cmdline",
+          ["<Up>"] = { "select_prev", "fallback" },
+          ["<Down>"] = { "select_next", "fallback" },
+        },
+      },
     },
   },
   {

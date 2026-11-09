@@ -198,6 +198,7 @@ end
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 
+vim.diagnostic.config({ virtual_text = true })
 -- .v is ambiguous (V/Coq/Verilog); empty new files default to V otherwise
 vim.g.filetype_v = "verilog"
 -- Command to toggle inline diagnostics

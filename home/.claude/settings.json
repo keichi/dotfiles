@@ -1,0 +1,54 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh -c 'rex __internal session-start --agent claude 2>/dev/null || true'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "ponytail@ponytail": true,
+    "clangd-lsp@claude-plugins-official": true,
+    "eli5@claude-community": true,
+    "octopus@date-lab": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "claude-community": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-community"
+      }
+    },
+    "date-lab": {
+      "source": {
+        "source": "github",
+        "repo": "date-lab/skills"
+      }
+    }
+  },
+  "language": "japanese",
+  "tui": "fullscreen",
+  "agentPushNotifEnabled": true,
+  "model": "opus"
+}

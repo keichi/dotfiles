@@ -22,10 +22,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # nvim
-alias vim='nvim'
-alias vi='nvim'
-
+alias vim=nvim
+alias vi=nvim
 export EDITOR=nvim
+
+# ls
+alias ls=lsd
 
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"

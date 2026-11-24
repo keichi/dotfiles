@@ -45,9 +45,6 @@ zinit snippet OMZP::direnv/direnv.plugin.zsh
 zinit snippet OMZP::gpg-agent/gpg-agent.plugin.zsh
 zinit snippet OMZP::pyenv/pyenv.plugin.zsh
 
-# Added by Antigravity
-export PATH="/Users/keichi/.antigravity/antigravity/bin:$PATH"
-
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/keichi/.lmstudio/bin"
 # End of LM Studio CLI section
@@ -60,3 +57,10 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
 	command rm -f -- "$tmp"
 }
+
+# >>> Magnitude CLI PATH >>>
+case "$PATH" in
+  "$HOME/.magnitude/bin"|"$HOME/.magnitude/bin":*) ;;
+  *) export PATH="$HOME/.magnitude/bin:$PATH" ;;
+esac
+# <<< Magnitude CLI PATH <<<

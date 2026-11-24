@@ -103,3 +103,5 @@ crashlytics-build.properties
 
 # direnv
 .direnv/
+
+**/.claude/settings.local.json
